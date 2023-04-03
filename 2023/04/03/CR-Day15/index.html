@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Note在计算机中，可以使用加法和位移操作来表示除法和乘法。乘法:A*12&#x3D;A&gt;&gt;7+A&gt;&gt;5除法:A&#x2F;C&#x3D;A*((2^N)&#x2F;C)*(1&#x2F;(2^N))&#x3D;AM&gt;&gt;N    N越大精确度越高  减法可以表示为:A-B&#x3D;A+neg(B) 补码在补码中，最高位作为符号位，0表示正，1表示负。当补码为正">
+  <meta name="description" content="Note函数指针1.函数指针的定义和使用   12345678910111213char* fun(char *pDst,char *pSrc)&amp;#123;    printf(&quot;this is a fun&quot;);    return pDst;&amp;#125;int main()&amp;#123;    char szBuf[20];    char *((__cdecl)*pfun)(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CR Day1">
-<meta property="og:url" content="http://example.com/2023/03/13/CR-Day1/index.html">
+<meta property="og:title" content="CR-Day15">
+<meta property="og:url" content="http://example.com/2023/04/03/CR-Day15/index.html">
 <meta property="og:site_name" content="kkano">
-<meta property="og:description" content="Note在计算机中，可以使用加法和位移操作来表示除法和乘法。乘法:A*12&#x3D;A&gt;&gt;7+A&gt;&gt;5除法:A&#x2F;C&#x3D;A*((2^N)&#x2F;C)*(1&#x2F;(2^N))&#x3D;AM&gt;&gt;N    N越大精确度越高  减法可以表示为:A-B&#x3D;A+neg(B) 补码在补码中，最高位作为符号位，0表示正，1表示负。当补码为正">
+<meta property="og:description" content="Note函数指针1.函数指针的定义和使用   12345678910111213char* fun(char *pDst,char *pSrc)&amp;#123;    printf(&quot;this is a fun&quot;);    return pDst;&amp;#125;int main()&amp;#123;    char szBuf[20];    char *((__cdecl)*pfun)(">
 <meta property="og:locale">
-<meta property="article:published_time" content="2023-03-13T11:23:49.000Z">
-<meta property="article:modified_time" content="2023-03-13T12:24:37.721Z">
+<meta property="article:published_time" content="2023-04-03T13:10:19.000Z">
+<meta property="article:modified_time" content="2023-04-03T13:16:19.536Z">
 <meta property="article:author" content="kkano">
 <meta property="article:tag" content="CR-study">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/03/13/CR-Day1/">
+<link rel="canonical" href="http://example.com/2023/04/03/CR-Day15/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>CR Day1 | kkano</title>
+  <title>CR-Day15 | kkano</title>
   
 
 
@@ -151,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/13/CR-Day1/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/CR-Day15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          CR Day1
+          CR-Day15
         </h1>
 
         <div class="post-meta">
@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-03-13 19:23:49 / Modified: 20:24:37" itemprop="dateCreated datePublished" datetime="2023-03-13T19:23:49+08:00">2023-03-13</time>
+              <time title="Created: 2023-04-03 21:10:19 / Modified: 21:16:19" itemprop="dateCreated datePublished" datetime="2023-04-03T21:10:19+08:00">2023-04-03</time>
             </span>
 
           
@@ -189,13 +189,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>在计算机中，可以使用加法和位移操作来表示除法和乘法。<br>乘法:<strong>A*12&#x3D;A&gt;&gt;7+A&gt;&gt;5</strong><br>除法:<strong>A&#x2F;C&#x3D;A*((2^N)&#x2F;C)*(1&#x2F;(2^N))&#x3D;AM&gt;&gt;N</strong>  </p>
-<blockquote>
-<p>N越大精确度越高</p>
-</blockquote>
-<p>减法可以表示为:<strong>A-B&#x3D;A+neg(B)</strong></p>
-<p>补码<br>在补码中，最高位作为符号位，0表示正，1表示负。<br>当补码为正的时候，表示的真值不变。<br>当补码为负的时候，表示的真值为补码求补后的真值。  </p>
-<p>计算二进制不能精确表示的十进制小数的二进制位模式:<br>将十进制小数一直乘以2,取每次乘2后的个位作为位模式。</p>
+        <h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>函数指针<br>1.函数指针的定义和使用  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="title function_">fun</span><span class="params">(<span class="type">char</span> *pDst,<span class="type">char</span> *pSrc)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;this is a fun&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> pDst;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> szBuf[<span class="number">20</span>];</span><br><span class="line">    <span class="type">char</span> *((__cdecl)*pfun)(<span class="type">char</span> *,<span class="type">char</span> *)=<span class="literal">NULL</span>;<span class="comment">//定义</span></span><br><span class="line">    pfun=fun;</span><br><span class="line">    pfun(szBuf,<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义时，返回类型，调用约定，参数序列需要一一对应。<br>通过函数指针的调用为间接调用。<br>2.函数指针的typedef  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">char</span>* (__cdecl*PTEST)(<span class="type">char</span>*,<span class="type">char</span>*);</span><br></pre></td></tr></table></figure>
+<p>3.函数指针数组  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Hello</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">World</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;World&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Test</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Test&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">void</span> (*aryPfn[])=&#123;Hello,World,Test&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="keyword">sizeof</span>(aryPfn)/<span class="keyword">sizeof</span>(aryPfn[<span class="number">0</span>]);i++)</span><br><span class="line">    &#123;</span><br><span class="line">        aryPfn[i]();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="项目小结"><a href="#项目小结" class="headerlink" title="项目小结"></a>项目小结</h3><p>1.变量定义的规范<br>2.行内注释<br>3.极限情况测试<br>4.文档编写  </p>
 
     </div>
 
@@ -214,13 +215,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/03/12/Summerize-of-phase-3/" rel="prev" title="Summerize of phase 3">
-      <i class="fa fa-chevron-left"></i> Summerize of phase 3
+    <a href="/2023/04/02/CR-Day14/" rel="prev" title="CR-Day14">
+      <i class="fa fa-chevron-left"></i> CR-Day14
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/03/23/CR-Day2/" rel="next" title="CR-Day2">
-      CR-Day2 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -279,7 +277,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Note"><span class="nav-number">1.</span> <span class="nav-text">Note</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Note"><span class="nav-number">1.</span> <span class="nav-text">Note</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%B0%8F%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">项目小结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
