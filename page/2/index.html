@@ -115,6 +115,16 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -143,6 +153,146 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/28/CR-Day12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/28/CR-Day12/" class="post-title-link" itemprop="url">CR-Day12</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-03-28 22:31:36 / Modified: 22:57:45" itemprop="dateCreated datePublished" datetime="2023-03-28T22:31:36+08:00">2023-03-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>内存结构<br>1.花括号为作用域符<br>2.编译器存在命名粉碎机制，命名粉碎机制在不同语言下有不同的表达，但组成大致基本相同，包含变量名，作用域阶数和函数名<br>3.局部静态变量在通常情况下在运行时只初始化一次。局部静态变量是否初始化取决于该变量的标志的值</p>
+<p>宏<br>1.数值型常量：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> PI 3.1415f</span></span><br></pre></td></tr></table></figure>
+<p>2.表达式宏：</p>
+<pre><code class="c">#define PLUS(a,b) ((a)+(b))
+</code></pre>
+<p>3.语句宏：</p>
+<pre><code class="c">#define SHOWHELLO(s) printf(#s”Hello”);printf(“\r\n”);
+</code></pre>
+<p>4.说明性宏，用于作为注释<br>5.兼容性宏<br>6.在宏中#表示字符串化，##表示连接  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/CR-Day2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/23/CR-Day2/" class="post-title-link" itemprop="url">CR-Day2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-03-23 09:25:27" itemprop="dateCreated datePublished" datetime="2023-03-23T09:25:27+08:00">2023-03-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-03-26 12:15:03" itemprop="dateModified" datetime="2023-03-26T12:15:03+08:00">2023-03-26</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>c,c++,vc++之间的区别:前两个为语言语法，后一个为开发环境。<br>c从源文件到可执行文件:<br>hello.c–cl.exe–&gt;hello.obj–link.exe–&gt;hello.exe</p>
+<h3 id="计算机中浮点数"><a href="#计算机中浮点数" class="headerlink" title="计算机中浮点数"></a>计算机中浮点数</h3><ol>
+<li>由三部分组成，符号位(S)，指数位(E)和数据位(D)组成。  </li>
+<li>真值表示:S(2^(E-偏置值)*D)</li>
+</ol>
+<h3 id="计算机中char和int的区别"><a href="#计算机中char和int的区别" class="headerlink" title="计算机中char和int的区别"></a>计算机中char和int的区别</h3><ol>
+<li>char使用1个字节，int使用4个字节，但是char的占用大小由实际系统决定。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -431,13 +581,15 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>

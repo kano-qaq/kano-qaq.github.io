@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="note内存结构1.将进程可大致分为四部分：code(代码)，data(数据)，stack(栈)和heap(堆)2.各个部分都可有四种属性：read(可读)，write(可写)，execute(可执行)和share(共享)3.全局变量的储存位置由内存属性来决定4.局部变量和全局变量的区别      NULL 作用域 生命周期    局部变量 函数开始到函数结束 函数开始到函数结束   全局变量 工">
+  <meta name="description" content="note堆：windows下堆结构    … …    上一个堆的地址 下一个堆的地址   所在文件的指针 行号   堆大小 堆类型   堆编号 上溢出标志   内容 下溢出标志   堆操作1.HeapCreate2.HeapAlloc3.HeapFree4.HeapDestroy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CR-Day11">
-<meta property="og:url" content="http://example.com/2023/03/28/CR-Day11/index.html">
+<meta property="og:title" content="CR-Day19">
+<meta property="og:url" content="http://example.com/2023/04/10/CR-Day19/index.html">
 <meta property="og:site_name" content="kkano">
-<meta property="og:description" content="note内存结构1.将进程可大致分为四部分：code(代码)，data(数据)，stack(栈)和heap(堆)2.各个部分都可有四种属性：read(可读)，write(可写)，execute(可执行)和share(共享)3.全局变量的储存位置由内存属性来决定4.局部变量和全局变量的区别      NULL 作用域 生命周期    局部变量 函数开始到函数结束 函数开始到函数结束   全局变量 工">
+<meta property="og:description" content="note堆：windows下堆结构    … …    上一个堆的地址 下一个堆的地址   所在文件的指针 行号   堆大小 堆类型   堆编号 上溢出标志   内容 下溢出标志   堆操作1.HeapCreate2.HeapAlloc3.HeapFree4.HeapDestroy">
 <meta property="og:locale">
-<meta property="article:published_time" content="2023-03-28T14:31:57.000Z">
-<meta property="article:modified_time" content="2023-03-28T14:52:05.991Z">
+<meta property="article:published_time" content="2023-04-10T13:13:35.000Z">
+<meta property="article:modified_time" content="2023-04-13T03:10:18.726Z">
 <meta property="article:author" content="kkano">
 <meta property="article:tag" content="CR-study">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/03/28/CR-Day11/">
+<link rel="canonical" href="http://example.com/2023/04/10/CR-Day19/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>CR-Day11 | kkano</title>
+  <title>CR-Day19 | kkano</title>
   
 
 
@@ -161,7 +161,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/28/CR-Day11/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/10/CR-Day19/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -174,7 +174,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          CR-Day11
+          CR-Day19
         </h1>
 
         <div class="post-meta">
@@ -183,10 +183,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-03-28 22:31:57 / Modified: 22:52:05" itemprop="dateCreated datePublished" datetime="2023-03-28T22:31:57+08:00">2023-03-28</time>
+              <time title="Created: 2023-04-10 21:13:35" itemprop="dateCreated datePublished" datetime="2023-04-10T21:13:35+08:00">2023-04-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-04-13 11:10:18" itemprop="dateModified" datetime="2023-04-13T11:10:18+08:00">2023-04-13</time>
+              </span>
 
           
 
@@ -199,37 +205,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>内存结构<br>1.将进程可大致分为四部分：code(代码)，data(数据)，stack(栈)和heap(堆)<br>2.各个部分都可有四种属性：read(可读)，write(可写)，execute(可执行)和share(共享)<br>3.全局变量的储存位置由内存属性来决定<br>4.局部变量和全局变量的区别  </p>
+        <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>堆：<br>windows下堆结构</p>
 <table>
 <thead>
 <tr>
-<th>NULL</th>
-<th>作用域</th>
-<th>生命周期</th>
+<th>…</th>
+<th>…</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>局部变量</td>
-<td>函数开始到函数结束</td>
-<td>函数开始到函数结束</td>
+<td>上一个堆的地址</td>
+<td>下一个堆的地址</td>
 </tr>
 <tr>
-<td>全局变量</td>
-<td>工程内源码文件都可访问</td>
-<td>模块装载到模块卸载</td>
+<td>所在文件的指针</td>
+<td>行号</td>
 </tr>
 <tr>
-<td>静态全局</td>
-<td>所定义文件内</td>
-<td>同全局</td>
+<td>堆大小</td>
+<td>堆类型</td>
 </tr>
 <tr>
-<td>静态局部</td>
-<td>所定义花括号内</td>
-<td>同全局</td>
+<td>堆编号</td>
+<td>上溢出标志</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>下溢出标志</td>
 </tr>
 </tbody></table>
-<p>5.可以通过全局变量来实现在main函数前执行代码<br>6.通过static关键字定义的全局变量不能跨文件访问</p>
+<p>堆操作<br>1.HeapCreate<br>2.HeapAlloc<br>3.HeapFree<br>4.HeapDestroy</p>
 
     </div>
 
@@ -248,13 +253,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/03/28/CR-Day12/" rel="prev" title="CR-Day12">
-      <i class="fa fa-chevron-left"></i> CR-Day12
+    <a href="/2023/04/09/CR-Day18/" rel="prev" title="CR-Day18">
+      <i class="fa fa-chevron-left"></i> CR-Day18
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/03/28/CR-Day9/" rel="next" title="CR-Day9">
-      CR-Day9 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
