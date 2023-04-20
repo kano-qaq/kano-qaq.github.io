@@ -157,6 +157,283 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/CR-Day13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/02/CR-Day13/" class="post-title-link" itemprop="url">CR-Day13</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-04-02 14:19:50 / Modified: 14:23:29" itemprop="dateCreated datePublished" datetime="2023-04-02T14:19:50+08:00">2023-04-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>名称粉碎机制：<br>可防止调用崩溃，用于解决声明与实现不匹配的问题</p>
+<p>宏：<br>1.编译选项宏，用于保证编译前，任何参与编译的源码都能意识到该宏名称的存在。<br>2.编译器内置宏，如__FILE__ \ <strong>LINE</strong><br>3.防止重复包含的方法<br>  #ifndef XXX<br>  #define XXX<br>  …<br>  #endif<br>4.头文件只放声明不放定义<br>5.guidgen用于生成全球唯一标识符  </p>
+<p>指针：<br>1.指针为强类型检查，类型不一致不能通过编译<br>2数组名称的本质为第0个元素的指针常量</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/28/CR-Day3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/28/CR-Day3/" class="post-title-link" itemprop="url">CR-Day3</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-03-28 23:05:18 / Modified: 23:07:32" itemprop="dateCreated datePublished" datetime="2023-03-28T23:05:18+08:00">2023-03-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>变量和函数命名要遵循同一的规范</p>
+<p>命名规范  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n, i, u, dw... = <span class="number">0</span>;</span><br><span class="line"><span class="type">char</span> c, ch = ‘\<span class="number">0</span>’;</span><br><span class="line"><span class="type">float</span> f, flt = <span class="number">0.0f</span>;</span><br><span class="line"><span class="type">double</span> d, dbl = <span class="number">0.0</span>;</span><br></pre></td></tr></table></figure>
+<p>关于cl<br>1.优化选项&#x2F;O1 体积优先,&#x2F;O2 速度优先<br>2.选项&#x2F;WX,把警告当作错误  </p>
+<p>#include中双引号表示优先在当前目录下寻找  </p>
+<p>变量声明时需要初始化，以避免程序后续行为的不确定性</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/28/CR-Day9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/28/CR-Day9/" class="post-title-link" itemprop="url">CR-Day9</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-03-28 23:00:12 / Modified: 23:03:34" itemprop="dateCreated datePublished" datetime="2023-03-28T23:00:12+08:00">2023-03-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>字符串与字符数组区别<br>1.字符串有格式化，而字符数组没有格式化<br>2.字符串有两种格式c-style和pascal-style</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c-style     :h e l l o \0</span><br><span class="line">pascal-style:5 h e l l o</span><br></pre></td></tr></table></figure>
+<p>c-style多用于即使通信，pascal-style多用于数据储存</p>
+<p>unicode编码<br>1.用于解决编码表示不足的问题<br>2.中文编码占两字节且表示为负数  </p>
+<p>杂项<br>1.赋值运算的结果为等号左值<br>2.加减乘除的运算结果的类型为对应类型常量  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/28/CR-Day11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/28/CR-Day11/" class="post-title-link" itemprop="url">CR-Day11</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-03-28 22:31:57 / Modified: 22:52:05" itemprop="dateCreated datePublished" datetime="2023-03-28T22:31:57+08:00">2023-03-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>内存结构<br>1.将进程可大致分为四部分：code(代码)，data(数据)，stack(栈)和heap(堆)<br>2.各个部分都可有四种属性：read(可读)，write(可写)，execute(可执行)和share(共享)<br>3.全局变量的储存位置由内存属性来决定<br>4.局部变量和全局变量的区别  </p>
+<table>
+<thead>
+<tr>
+<th>NULL</th>
+<th>作用域</th>
+<th>生命周期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>局部变量</td>
+<td>函数开始到函数结束</td>
+<td>函数开始到函数结束</td>
+</tr>
+<tr>
+<td>全局变量</td>
+<td>工程内源码文件都可访问</td>
+<td>模块装载到模块卸载</td>
+</tr>
+<tr>
+<td>静态全局</td>
+<td>所定义文件内</td>
+<td>同全局</td>
+</tr>
+<tr>
+<td>静态局部</td>
+<td>所定义花括号内</td>
+<td>同全局</td>
+</tr>
+</tbody></table>
+<p>5.可以通过全局变量来实现在main函数前执行代码<br>6.通过static关键字定义的全局变量不能跨文件访问</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/28/CR-Day12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -581,7 +858,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
