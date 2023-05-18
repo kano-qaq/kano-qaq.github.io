@@ -157,6 +157,73 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/14/CR-Day31/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/05/14/CR-Day31/" class="post-title-link" itemprop="url">CR-Day31</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-05-14 14:16:22 / Modified: 14:18:31" itemprop="dateCreated datePublished" datetime="2023-05-14T14:16:22+08:00">2023-05-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>术语：<br>数据(Data)<br>元素(Element)<br>数据元素(Data Element) ：数据的基本单位<br>字段（Field)<br>数据项(Item)：数据的不可分割最小单位<br>数据对象(Data Object)：性质&#x2F;类型相同的数据元素的集合<br>记录(Record)<br>节点(Node)<br>层(Layer)<br>父亲(Parent)<br>孩子(Child)  </p>
+<p>常见数据结构：<br>1.线性结构前后关系<br>2.树结构<br>3.图结构  </p>
+<p>算法的特征：有限性，确定性，可行性，输入，输出<br>算法的要求：正确性，可读性，健壮性，高效与低存储量  </p>
+<p>时间增长率 &#x3D;&gt; 时间复杂度<br>空间增长率 &#x3D;&gt; 空间复杂度  </p>
+<p>O(1)    &#x3D;&gt; 常量阶<br>O(logN) &#x3D;&gt; 对数阶<br>O(N)    &#x3D;&gt; 线性阶<br>O(N^2)  &#x3D;&gt; 平方阶<br>O(N^3)  &#x3D;&gt; 立方阶  </p>
+<p>最好时间复杂度:O(N^2)<br>最差时间复杂度:O(N^2)  </p>
+<p>最好时间复杂度:O(N)<br>最差时间复杂度:O(N^2)  </p>
+<p>平均时间复杂度:最好时间复杂度占比<em>最好时间复杂度+最差时间复杂度占比</em>最差时间复杂度</p>
+<p>总频度：f(N）<br>时间复杂度：T(N)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/11/CR-Day30/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -435,10 +502,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-04-27 14:49:58 / Modified: 14:52:13" itemprop="dateCreated datePublished" datetime="2023-04-27T14:49:58+08:00">2023-04-27</time>
+              <time title="Created: 2023-04-27 14:49:58" itemprop="dateCreated datePublished" datetime="2023-04-27T14:49:58+08:00">2023-04-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:48" itemprop="dateModified" datetime="2023-05-18T14:22:48+08:00">2023-05-18</time>
+              </span>
 
           
 
@@ -451,8 +524,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###note</p>
-<p>拷贝构造的触发：<br>1.函数返回的类型为对象<br>2.传入的参数为对象</p>
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>拷贝构造的触发：<br>1.函数返回的类型为对象<br>2.传入的参数为对象</p>
 <p>移动构造形式<br>Classname(Classname&amp;&amp; obj){…}<br>移动构造的触发：<br>1.对象作为返回值且没有使用<br>2.无名对象作为参数<br>3.强转为右值引用<br>4.std::move(对象标识符)</p>
 <p>友元<br>1.友元全局函数 friend int main();<br>2.友元成员函数 friend void Classname::function();<br>3.友元类 friend class Classname;</p>
 <p>运算符重载<br>目的：通过运算符来调用成员函数<br>注意：<br>1.不改变运算符的原义<br>2.运算符优先级不变<br>3.使用方式不变  </p>
@@ -509,7 +581,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-04-26 12:03:07" itemprop="dateModified" datetime="2023-04-26T12:03:07+08:00">2023-04-26</time>
+                <time title="Modified: 2023-05-18 14:22:39" itemprop="dateModified" datetime="2023-05-18T14:22:39+08:00">2023-05-18</time>
               </span>
 
           
@@ -523,8 +595,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###note</p>
-<p>只实例化一次</p>
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>只实例化一次</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Singleton &#123;</span><br><span class="line">public:</span><br><span class="line">    static Singleton* get()&#123;</span><br><span class="line">        if (p == nullptr)</span><br><span class="line">            p = new Singleton();</span><br><span class="line">        return p;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    int n;</span><br><span class="line">    Singleton() &#123;&#125;</span><br><span class="line">    ~Singleton() &#123;&#125;</span><br><span class="line">    static Singleton* p;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>只能堆上实例化</p>
@@ -574,10 +645,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-04-25 21:50:13 / Modified: 21:54:32" itemprop="dateCreated datePublished" datetime="2023-04-25T21:50:13+08:00">2023-04-25</time>
+              <time title="Created: 2023-04-25 21:50:13" itemprop="dateCreated datePublished" datetime="2023-04-25T21:50:13+08:00">2023-04-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:32" itemprop="dateModified" datetime="2023-05-18T14:22:32+08:00">2023-05-18</time>
+              </span>
 
           
 
@@ -590,8 +667,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###note</p>
-<p>类成员函数中使用const关键字确保该函数不会修改类的成员值。<br>如int getValue const {…}</p>
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>类成员函数中使用const关键字确保该函数不会修改类的成员值。<br>如int getValue const {…}</p>
 <p>无名对象可以用作参数或者返回值。</p>
 <p>初始化器只可用于构造函数<br>如Class::Class(int member1,int member2)<br>:member1(member1),member2(member2),<br>const1(const1)&#x2F;inner_class(inner_member1,inner_member2) {…}<br>用于对象成员初始化和常量初始化。</p>
 <p>静态成员函数<br>1.没有this指针。<br>2.通过指明类的作用域来调用</p>
@@ -638,10 +714,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-04-20 16:39:45 / Modified: 16:52:50" itemprop="dateCreated datePublished" datetime="2023-04-20T16:39:45+08:00">2023-04-20</time>
+              <time title="Created: 2023-04-20 16:39:45" itemprop="dateCreated datePublished" datetime="2023-04-20T16:39:45+08:00">2023-04-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:22" itemprop="dateModified" datetime="2023-05-18T14:22:22+08:00">2023-05-18</time>
+              </span>
 
           
 
@@ -654,8 +736,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###note</p>
-<p>函数重载(overload):名称粉碎<br>1.参数的类型信息<br>2.参数数量<br>3.参数顺序<br>4.返回值类型<br>5.作用域  </p>
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>函数重载(overload):名称粉碎<br>1.参数的类型信息<br>2.参数数量<br>3.参数顺序<br>4.返回值类型<br>5.作用域  </p>
 <p>注意：<br>1.可能会导致二义性<br>2.返回类型不参与重载<br>3.参与重载的有参数类型，参数数量和参数顺序  </p>
 <p>内联关键字 inline  </p>
 <p>lambda</p>
@@ -710,10 +791,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-04-20 11:48:09 / Modified: 11:50:54" itemprop="dateCreated datePublished" datetime="2023-04-20T11:48:09+08:00">2023-04-20</time>
+              <time title="Created: 2023-04-20 11:48:09" itemprop="dateCreated datePublished" datetime="2023-04-20T11:48:09+08:00">2023-04-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:11" itemprop="dateModified" datetime="2023-05-18T14:22:11+08:00">2023-05-18</time>
+              </span>
 
           
 
@@ -726,8 +813,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###note</p>
-<p>通用赋值格式<br>数据类型 标识符 (值)</p>
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>通用赋值格式<br>数据类型 标识符 (值)</p>
 <p>nullptr关键字是指针类型表示空指针</p>
 <p>auto关键字:<br>若int a&#x3D;3;auto b&#x3D;a;则auto为int。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ary=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> e: ary)</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;e;</span><br></pre></td></tr></table></figure>
@@ -737,69 +823,6 @@
 <p>static_assert()判断常量<br>assert()判断变量</p>
 <p>&amp;引用:<br>void modify(int &amp;p)此处传入的为参数的地址<br>void modify(int p)此处出入的为参数的值<br>引用不允许初始化为常量</p>
 <p>缺省参数:<br>void foo(int x,int y&#x3D;10){…}<br>在foo(5)的调用下，x&#x3D;5,y&#x3D;10。在foo(5,5)的调用下，x&#x3D;5,y&#x3D;5。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/18/CR-Day21/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/18/CR-Day21/" class="post-title-link" itemprop="url">CR-Day21</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-04-18 12:30:15 / Modified: 12:32:06" itemprop="dateCreated datePublished" datetime="2023-04-18T12:30:15+08:00">2023-04-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>###note</p>
-<p>C++:<br>1.面向过程编程<br>2.面向对象编程<br>3.抽象编程<br>4.泛型编程  </p>
-<p>输入&#x2F;输出流：<br>流状态：<br>1.good(正常)。<br>2.fail(可能读取错误，但不致命)。<br>3.bad(致命错误)。<br>4.eof(没数据)  </p>
-<p>流只在good状态下正常工作。</p>
-<p>endl会刷新缓冲区。</p>
 
       
     </div>
@@ -884,7 +907,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

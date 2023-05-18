@@ -157,6 +157,74 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/18/CR-Day21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/18/CR-Day21/" class="post-title-link" itemprop="url">CR-Day21</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-04-18 12:30:15" itemprop="dateCreated datePublished" datetime="2023-04-18T12:30:15+08:00">2023-04-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:02" itemprop="dateModified" datetime="2023-05-18T14:22:02+08:00">2023-05-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>C++:<br>1.面向过程编程<br>2.面向对象编程<br>3.抽象编程<br>4.泛型编程  </p>
+<p>输入&#x2F;输出流：<br>流状态：<br>1.good(正常)。<br>2.fail(可能读取错误，但不致命)。<br>3.bad(致命错误)。<br>4.eof(没数据)  </p>
+<p>流只在good状态下正常工作。</p>
+<p>endl会刷新缓冲区。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/13/CR-Day20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -180,10 +248,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-04-13 22:30:51 / Modified: 22:33:42" itemprop="dateCreated datePublished" datetime="2023-04-13T22:30:51+08:00">2023-04-13</time>
+              <time title="Created: 2023-04-13 22:30:51" itemprop="dateCreated datePublished" datetime="2023-04-13T22:30:51+08:00">2023-04-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:21:54" itemprop="dateModified" datetime="2023-05-18T14:21:54+08:00">2023-05-18</time>
+              </span>
 
           
 
@@ -196,8 +270,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###note</p>
-<p>资源使用规范</p>
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>资源使用规范</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//1.引用资源的变量必须初始化为错误值</span></span><br><span class="line">    <span class="type">int</span>* p = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="comment">//2.申请资源后必须检查</span></span><br><span class="line">    p = (<span class="type">int</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (p == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//3.如发生不测，按照需求文档处理异常</span></span><br><span class="line">        error();</span><br><span class="line">        <span class="comment">//4.流程转移到统一释放资源的位置</span></span><br><span class="line">        <span class="keyword">goto</span> EXIT_PROC;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//5.使用资源</span></span><br><span class="line">    *p = <span class="number">0x11</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//6.统一释放资源的位置安排在出口处</span></span><br><span class="line">EXIT_PROC:</span><br><span class="line">    <span class="comment">//7.释放资源前检查其有效性</span></span><br><span class="line">    <span class="keyword">if</span> (p != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//8.释放有效资源</span></span><br><span class="line">        <span class="built_in">free</span>(p);</span><br><span class="line">        <span class="comment">//9.释放资源后，变量置回错误状态</span></span><br><span class="line">        p = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -744,69 +817,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/28/CR-Day9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/28/CR-Day9/" class="post-title-link" itemprop="url">CR-Day9</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-03-28 23:00:12 / Modified: 23:03:34" itemprop="dateCreated datePublished" datetime="2023-03-28T23:00:12+08:00">2023-03-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>字符串与字符数组区别<br>1.字符串有格式化，而字符数组没有格式化<br>2.字符串有两种格式c-style和pascal-style</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c-style     :h e l l o \0</span><br><span class="line">pascal-style:5 h e l l o</span><br></pre></td></tr></table></figure>
-<p>c-style多用于即使通信，pascal-style多用于数据储存</p>
-<p>unicode编码<br>1.用于解决编码表示不足的问题<br>2.中文编码占两字节且表示为负数  </p>
-<p>杂项<br>1.赋值运算的结果为等号左值<br>2.加减乘除的运算结果的类型为对应类型常量  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -876,7 +886,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

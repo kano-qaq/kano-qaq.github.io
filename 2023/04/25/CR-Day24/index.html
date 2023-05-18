@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="###note 类成员函数中使用const关键字确保该函数不会修改类的成员值。如int getValue const {…} 无名对象可以用作参数或者返回值。 初始化器只可用于构造函数如Class::Class(int member1,int member2):member1(member1),member2(member2),const1(const1)&#x2F;inner_class(inn">
+  <meta name="description" content="note类成员函数中使用const关键字确保该函数不会修改类的成员值。如int getValue const {…} 无名对象可以用作参数或者返回值。 初始化器只可用于构造函数如Class::Class(int member1,int member2):member1(member1),member2(member2),const1(const1)&#x2F;inner_class(inner_m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CR-Day24">
 <meta property="og:url" content="http://example.com/2023/04/25/CR-Day24/index.html">
 <meta property="og:site_name" content="kkano">
-<meta property="og:description" content="###note 类成员函数中使用const关键字确保该函数不会修改类的成员值。如int getValue const {…} 无名对象可以用作参数或者返回值。 初始化器只可用于构造函数如Class::Class(int member1,int member2):member1(member1),member2(member2),const1(const1)&#x2F;inner_class(inn">
+<meta property="og:description" content="note类成员函数中使用const关键字确保该函数不会修改类的成员值。如int getValue const {…} 无名对象可以用作参数或者返回值。 初始化器只可用于构造函数如Class::Class(int member1,int member2):member1(member1),member2(member2),const1(const1)&#x2F;inner_class(inner_m">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-04-25T13:50:13.000Z">
-<meta property="article:modified_time" content="2023-04-25T13:54:32.486Z">
+<meta property="article:modified_time" content="2023-05-18T06:22:32.134Z">
 <meta property="article:author" content="kkano">
 <meta property="article:tag" content="CR-study">
 <meta name="twitter:card" content="summary">
@@ -183,10 +183,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-04-25 21:50:13 / Modified: 21:54:32" itemprop="dateCreated datePublished" datetime="2023-04-25T21:50:13+08:00">2023-04-25</time>
+              <time title="Created: 2023-04-25 21:50:13" itemprop="dateCreated datePublished" datetime="2023-04-25T21:50:13+08:00">2023-04-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:32" itemprop="dateModified" datetime="2023-05-18T14:22:32+08:00">2023-05-18</time>
+              </span>
 
           
 
@@ -199,8 +205,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>###note</p>
-<p>类成员函数中使用const关键字确保该函数不会修改类的成员值。<br>如int getValue const {…}</p>
+        <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>类成员函数中使用const关键字确保该函数不会修改类的成员值。<br>如int getValue const {…}</p>
 <p>无名对象可以用作参数或者返回值。</p>
 <p>初始化器只可用于构造函数<br>如Class::Class(int member1,int member2)<br>:member1(member1),member2(member2),<br>const1(const1)&#x2F;inner_class(inner_member1,inner_member2) {…}<br>用于对象成员初始化和常量初始化。</p>
 <p>静态成员函数<br>1.没有this指针。<br>2.通过指明类的作用域来调用</p>
@@ -288,6 +293,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#note"><span class="nav-number">1.</span> <span class="nav-text">note</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -301,7 +307,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

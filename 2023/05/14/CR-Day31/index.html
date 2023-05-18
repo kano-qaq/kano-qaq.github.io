@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="note堆：windows下堆结构    … …    上一个堆的地址 下一个堆的地址   所在文件的指针 行号   堆大小 堆类型   堆编号 上溢出标志   内容 下溢出标志   堆操作1.HeapCreate2.HeapAlloc3.HeapFree4.HeapDestroy">
+  <meta name="description" content="note术语：数据(Data)元素(Element)数据元素(Data Element) ：数据的基本单位字段（Field)数据项(Item)：数据的不可分割最小单位数据对象(Data Object)：性质&#x2F;类型相同的数据元素的集合记录(Record)节点(Node)层(Layer)父亲(Parent)孩子(Child)   常见数据结构：1.线性结构前后关系2.树结构3.图结构   算">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CR-Day19">
-<meta property="og:url" content="http://example.com/2023/04/10/CR-Day19/index.html">
+<meta property="og:title" content="CR-Day31">
+<meta property="og:url" content="http://example.com/2023/05/14/CR-Day31/index.html">
 <meta property="og:site_name" content="kkano">
-<meta property="og:description" content="note堆：windows下堆结构    … …    上一个堆的地址 下一个堆的地址   所在文件的指针 行号   堆大小 堆类型   堆编号 上溢出标志   内容 下溢出标志   堆操作1.HeapCreate2.HeapAlloc3.HeapFree4.HeapDestroy">
+<meta property="og:description" content="note术语：数据(Data)元素(Element)数据元素(Data Element) ：数据的基本单位字段（Field)数据项(Item)：数据的不可分割最小单位数据对象(Data Object)：性质&#x2F;类型相同的数据元素的集合记录(Record)节点(Node)层(Layer)父亲(Parent)孩子(Child)   常见数据结构：1.线性结构前后关系2.树结构3.图结构   算">
 <meta property="og:locale">
-<meta property="article:published_time" content="2023-04-10T13:13:35.000Z">
-<meta property="article:modified_time" content="2023-04-13T03:10:18.726Z">
+<meta property="article:published_time" content="2023-05-14T06:16:22.000Z">
+<meta property="article:modified_time" content="2023-05-14T06:18:31.621Z">
 <meta property="article:author" content="kkano">
 <meta property="article:tag" content="CR-study">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/04/10/CR-Day19/">
+<link rel="canonical" href="http://example.com/2023/05/14/CR-Day31/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>CR-Day19 | kkano</title>
+  <title>CR-Day31 | kkano</title>
   
 
 
@@ -161,7 +161,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/10/CR-Day19/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/14/CR-Day31/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -174,7 +174,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          CR-Day19
+          CR-Day31
         </h1>
 
         <div class="post-meta">
@@ -183,16 +183,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2023-04-10 21:13:35" itemprop="dateCreated datePublished" datetime="2023-04-10T21:13:35+08:00">2023-04-10</time>
+              <time title="Created: 2023-05-14 14:16:22 / Modified: 14:18:31" itemprop="dateCreated datePublished" datetime="2023-05-14T14:16:22+08:00">2023-05-14</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-04-13 11:10:18" itemprop="dateModified" datetime="2023-04-13T11:10:18+08:00">2023-04-13</time>
-              </span>
 
           
 
@@ -205,36 +199,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>堆：<br>windows下堆结构</p>
-<table>
-<thead>
-<tr>
-<th>…</th>
-<th>…</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>上一个堆的地址</td>
-<td>下一个堆的地址</td>
-</tr>
-<tr>
-<td>所在文件的指针</td>
-<td>行号</td>
-</tr>
-<tr>
-<td>堆大小</td>
-<td>堆类型</td>
-</tr>
-<tr>
-<td>堆编号</td>
-<td>上溢出标志</td>
-</tr>
-<tr>
-<td>内容</td>
-<td>下溢出标志</td>
-</tr>
-</tbody></table>
-<p>堆操作<br>1.HeapCreate<br>2.HeapAlloc<br>3.HeapFree<br>4.HeapDestroy</p>
+        <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>术语：<br>数据(Data)<br>元素(Element)<br>数据元素(Data Element) ：数据的基本单位<br>字段（Field)<br>数据项(Item)：数据的不可分割最小单位<br>数据对象(Data Object)：性质&#x2F;类型相同的数据元素的集合<br>记录(Record)<br>节点(Node)<br>层(Layer)<br>父亲(Parent)<br>孩子(Child)  </p>
+<p>常见数据结构：<br>1.线性结构前后关系<br>2.树结构<br>3.图结构  </p>
+<p>算法的特征：有限性，确定性，可行性，输入，输出<br>算法的要求：正确性，可读性，健壮性，高效与低存储量  </p>
+<p>时间增长率 &#x3D;&gt; 时间复杂度<br>空间增长率 &#x3D;&gt; 空间复杂度  </p>
+<p>O(1)    &#x3D;&gt; 常量阶<br>O(logN) &#x3D;&gt; 对数阶<br>O(N)    &#x3D;&gt; 线性阶<br>O(N^2)  &#x3D;&gt; 平方阶<br>O(N^3)  &#x3D;&gt; 立方阶  </p>
+<p>最好时间复杂度:O(N^2)<br>最差时间复杂度:O(N^2)  </p>
+<p>最好时间复杂度:O(N)<br>最差时间复杂度:O(N^2)  </p>
+<p>平均时间复杂度:最好时间复杂度占比<em>最好时间复杂度+最差时间复杂度占比</em>最差时间复杂度</p>
+<p>总频度：f(N）<br>时间复杂度：T(N)</p>
 
     </div>
 
@@ -253,13 +226,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/04/09/CR-Day18/" rel="prev" title="CR-Day18">
-      <i class="fa fa-chevron-left"></i> CR-Day18
+    <a href="/2023/05/11/CR-Day30/" rel="prev" title="CR-Day30">
+      <i class="fa fa-chevron-left"></i> CR-Day30
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/04/13/CR-Day20/" rel="next" title="CR-Day20">
-      CR-Day20 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
