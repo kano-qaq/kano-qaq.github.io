@@ -28,8 +28,9 @@
 <meta property="og:description" content="动态库动态库设计:1.在库中定义一个结构体，结构体的成员为库函数的地址，库只导出获取这个结构体的函数2.在苦衷定义一个类工厂，所有的类都继承类工厂，库只导出实例化类工厂的函数3.在库中申请的资源，需要由库来释放   动态库使用:1.LoadLibrary()在初次加载库时会申请内存空间，后续通过LoadLibrary()加载同一个库时只会将库的引用计数加一。FreeLibrary()同理，只有引用">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-07-04T14:22:46.000Z">
-<meta property="article:modified_time" content="2023-07-04T15:13:29.268Z">
+<meta property="article:modified_time" content="2023-08-31T11:43:39.728Z">
 <meta property="article:author" content="kkano">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2023/07/04/Windows03/">
@@ -182,10 +183,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-07-04 22:22:46 / Modified: 23:13:29" itemprop="dateCreated datePublished" datetime="2023-07-04T22:22:46+08:00">2023-07-04</time>
+              <time title="Created: 2023-07-04 22:22:46" itemprop="dateCreated datePublished" datetime="2023-07-04T22:22:46+08:00">2023-07-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:43:39" itemprop="dateModified" datetime="2023-08-31T19:43:39+08:00">2023-08-31</time>
+              </span>
 
           
 
@@ -210,6 +217,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Windows/" rel="tag"># Windows</a>
+          </div>
 
         
 
@@ -302,7 +312,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
