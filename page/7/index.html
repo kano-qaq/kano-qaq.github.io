@@ -157,6 +157,437 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/27/CR-Day26/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/27/CR-Day26/" class="post-title-link" itemprop="url">CR-Day26</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-04-27 14:49:58" itemprop="dateCreated datePublished" datetime="2023-04-27T14:49:58+08:00">2023-04-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:48" itemprop="dateModified" datetime="2023-05-18T14:22:48+08:00">2023-05-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>拷贝构造的触发：<br>1.函数返回的类型为对象<br>2.传入的参数为对象</p>
+<p>移动构造形式<br>Classname(Classname&amp;&amp; obj){…}<br>移动构造的触发：<br>1.对象作为返回值且没有使用<br>2.无名对象作为参数<br>3.强转为右值引用<br>4.std::move(对象标识符)</p>
+<p>友元<br>1.友元全局函数 friend int main();<br>2.友元成员函数 friend void Classname::function();<br>3.友元类 friend class Classname;</p>
+<p>运算符重载<br>目的：通过运算符来调用成员函数<br>注意：<br>1.不改变运算符的原义<br>2.运算符优先级不变<br>3.使用方式不变  </p>
+<p>成员函数重载，要求符号的左侧必须为对象。<br>全局函数运算符重载，可以实现符号的左侧为非对象。但是需要友元联系使用。</p>
+<p>转换运算符形式<br>operator return_type {…}</p>
+<p>转换优先级低于重载</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/25/CR-Day25/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/25/CR-Day25/" class="post-title-link" itemprop="url">CR-Day25</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-04-25 21:54:48" itemprop="dateCreated datePublished" datetime="2023-04-25T21:54:48+08:00">2023-04-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:39" itemprop="dateModified" datetime="2023-05-18T14:22:39+08:00">2023-05-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>只实例化一次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Singleton &#123;</span><br><span class="line">public:</span><br><span class="line">    static Singleton* get()&#123;</span><br><span class="line">        if (p == nullptr)</span><br><span class="line">            p = new Singleton();</span><br><span class="line">        return p;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    int n;</span><br><span class="line">    Singleton() &#123;&#125;</span><br><span class="line">    ~Singleton() &#123;&#125;</span><br><span class="line">    static Singleton* p;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>只能堆上实例化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Singleton &#123;</span><br><span class="line">public:</span><br><span class="line">    </span><br><span class="line">    static Singleton* init()</span><br><span class="line">    &#123;</span><br><span class="line">        p = new Singleton();</span><br><span class="line">        return p;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">    Singleton() &#123;&#125;</span><br><span class="line">    ~Singleton() &#123;&#125;</span><br><span class="line">    static Singleton* p;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>智能指针：<br>利用构造函数和析构函数的特性实现内存的自动申请和释放。</p>
+<p>计数引用需要和缓冲区绑定。</p>
+<p>写时拷贝处理复制拷贝的后续修改操作。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/25/CR-Day24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/25/CR-Day24/" class="post-title-link" itemprop="url">CR-Day24</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-04-25 21:50:13" itemprop="dateCreated datePublished" datetime="2023-04-25T21:50:13+08:00">2023-04-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:32" itemprop="dateModified" datetime="2023-05-18T14:22:32+08:00">2023-05-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>类成员函数中使用const关键字确保该函数不会修改类的成员值。<br>如int getValue const {…}</p>
+<p>无名对象可以用作参数或者返回值。</p>
+<p>初始化器只可用于构造函数<br>如Class::Class(int member1,int member2)<br>:member1(member1),member2(member2),<br>const1(const1)&#x2F;inner_class(inner_member1,inner_member2) {…}<br>用于对象成员初始化和常量初始化。</p>
+<p>静态成员函数<br>1.没有this指针。<br>2.通过指明类的作用域来调用</p>
+<p>静态数据成员<br>1.类似于全局变量</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/20/CR-Day23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/20/CR-Day23/" class="post-title-link" itemprop="url">CR-Day23</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-04-20 16:39:45" itemprop="dateCreated datePublished" datetime="2023-04-20T16:39:45+08:00">2023-04-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:22" itemprop="dateModified" datetime="2023-05-18T14:22:22+08:00">2023-05-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>函数重载(overload):名称粉碎<br>1.参数的类型信息<br>2.参数数量<br>3.参数顺序<br>4.返回值类型<br>5.作用域  </p>
+<p>注意：<br>1.可能会导致二义性<br>2.返回类型不参与重载<br>3.参与重载的有参数类型，参数数量和参数顺序  </p>
+<p>内联关键字 inline  </p>
+<p>lambda</p>
+<p><img src="/../images/lambda.png" alt="lambda"></p>
+<p>组成部分有：<br>1.捕获模式  </p>
+<ul>
+<li>1.1[]表示在主体不访问任何变量。[&#x3D;]可以访问变量的值。[&amp;]变量的引用访问。</li>
+<li>1.2若一个lambda表达式引用访问变量t和访问f的值，以下等效[&amp;t,f];[f,&amp;t];[&amp;,f];[&#x3D;,t];</li>
+<li>1.3在捕获模式中若已存在&amp;&#x2F;&#x3D;，那么后面的就不可以再次出现。</li>
+<li>1.4标识符和this只能出现一次</li>
+</ul>
+<p>2.参数列表<br>3.可变标记<br>4.是否抛出异常<br>5.返回类型<br>6.主体  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/20/CR-Day22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/20/CR-Day22/" class="post-title-link" itemprop="url">CR-Day22</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-04-20 11:48:09" itemprop="dateCreated datePublished" datetime="2023-04-20T11:48:09+08:00">2023-04-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:11" itemprop="dateModified" datetime="2023-05-18T14:22:11+08:00">2023-05-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>通用赋值格式<br>数据类型 标识符 (值)</p>
+<p>nullptr关键字是指针类型表示空指针</p>
+<p>auto关键字:<br>若int a&#x3D;3;auto b&#x3D;a;则auto为int。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ary=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> e: ary)</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;e;</span><br></pre></td></tr></table></figure>
+<p>遍历输出ary的内容。</p>
+<p>常量表达式：<br>const int c1&#x3D;10;</p>
+<p>constexpr关键字要求可以在编译期计算出结果。函数在定义时可以带constexpr关键字。</p>
+<p>static_assert()判断常量<br>assert()判断变量</p>
+<p>&amp;引用:<br>void modify(int &amp;p)此处传入的为参数的地址<br>void modify(int p)此处出入的为参数的值<br>引用不允许初始化为常量</p>
+<p>缺省参数:<br>void foo(int x,int y&#x3D;10){…}<br>在foo(5)的调用下，x&#x3D;5,y&#x3D;10。在foo(5,5)的调用下，x&#x3D;5,y&#x3D;5。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/18/CR-Day21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/18/CR-Day21/" class="post-title-link" itemprop="url">CR-Day21</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-04-18 12:30:15" itemprop="dateCreated datePublished" datetime="2023-04-18T12:30:15+08:00">2023-04-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-05-18 14:22:02" itemprop="dateModified" datetime="2023-05-18T14:22:02+08:00">2023-05-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>C++:<br>1.面向过程编程<br>2.面向对象编程<br>3.抽象编程<br>4.泛型编程  </p>
+<p>输入&#x2F;输出流：<br>流状态：<br>1.good(正常)。<br>2.fail(可能读取错误，但不致命)。<br>3.bad(致命错误)。<br>4.eof(没数据)  </p>
+<p>流只在good状态下正常工作。</p>
+<p>endl会刷新缓冲区。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/13/CR-Day20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -439,389 +870,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/05/CR-Day16/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/05/CR-Day16/" class="post-title-link" itemprop="url">CR-Day16</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-04-05 15:35:02 / Modified: 15:36:14" itemprop="dateCreated datePublished" datetime="2023-04-05T15:35:02+08:00">2023-04-05</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>指针数组<br>1.[数组名]是[数组第0个元素类型]的指针常量<br>2.[N维数组]是特殊的一维数组，其元素是[N-1维数组]<br>3.[某类型]指针取内容或下标运算得到[某类型]的引用<br>4.[某类型]指针加N后得到同类型指针常量  </p>
-<p>void *为没有解释方式的指针。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/03/CR-Day15/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/03/CR-Day15/" class="post-title-link" itemprop="url">CR-Day15</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-04-03 21:10:19 / Modified: 21:16:19" itemprop="dateCreated datePublished" datetime="2023-04-03T21:10:19+08:00">2023-04-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>函数指针<br>1.函数指针的定义和使用  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="title function_">fun</span><span class="params">(<span class="type">char</span> *pDst,<span class="type">char</span> *pSrc)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;this is a fun&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> pDst;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> szBuf[<span class="number">20</span>];</span><br><span class="line">    <span class="type">char</span> *((__cdecl)*pfun)(<span class="type">char</span> *,<span class="type">char</span> *)=<span class="literal">NULL</span>;<span class="comment">//定义</span></span><br><span class="line">    pfun=fun;</span><br><span class="line">    pfun(szBuf,<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义时，返回类型，调用约定，参数序列需要一一对应。<br>通过函数指针的调用为间接调用。<br>2.函数指针的typedef  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">char</span>* (__cdecl*PTEST)(<span class="type">char</span>*,<span class="type">char</span>*);</span><br></pre></td></tr></table></figure>
-<p>3.函数指针数组  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Hello</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">World</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;World&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Test</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Test&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">void</span> (*aryPfn[])=&#123;Hello,World,Test&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="keyword">sizeof</span>(aryPfn)/<span class="keyword">sizeof</span>(aryPfn[<span class="number">0</span>]);i++)</span><br><span class="line">    &#123;</span><br><span class="line">        aryPfn[i]();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="项目小结"><a href="#项目小结" class="headerlink" title="项目小结"></a>项目小结</h3><p>1.变量定义的规范<br>2.行内注释<br>3.极限情况测试<br>4.文档编写  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/CR-Day14/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/02/CR-Day14/" class="post-title-link" itemprop="url">CR-Day14</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-04-02 14:25:03 / Modified: 14:30:59" itemprop="dateCreated datePublished" datetime="2023-04-02T14:25:03+08:00">2023-04-02</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>指针<br>1.const * p下，目标为常量<br>2.*const p 下，指针为常量<br>3.后缀++为常量，前缀++为变量<br>4.sizeof为运算符<br>5.指针&#x3D;地址+解释方式<br>6.offsetof(type,x)&#x3D;&amp;(type*)0-&gt;x  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/CR-Day13/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/02/CR-Day13/" class="post-title-link" itemprop="url">CR-Day13</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-04-02 14:19:50" itemprop="dateCreated datePublished" datetime="2023-04-02T14:19:50+08:00">2023-04-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-06-04 10:00:04" itemprop="dateModified" datetime="2023-06-04T10:00:04+08:00">2023-06-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>名称粉碎机制：<br>可防止调用崩溃，用于解决声明与实现不匹配的问题</p>
-<p>宏：<br>1.编译选项宏，用于保证编译前，任何参与编译的源码都能意识到该宏名称的存在。<br>2.编译器内置宏，如__FILE__ \ __LINE__<br>3.防止重复包含的方法<br>  #ifndef XXX<br>  #define XXX<br>  …<br>  #endif<br>4.头文件只放声明不放定义<br>5.guidgen用于生成全球唯一标识符  </p>
-<p>指针：<br>1.指针为强类型检查，类型不一致不能通过编译<br>2数组名称的本质为第0个元素的指针常量</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/28/CR-Day3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/28/CR-Day3/" class="post-title-link" itemprop="url">CR-Day3</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-03-28 23:05:18 / Modified: 23:07:32" itemprop="dateCreated datePublished" datetime="2023-03-28T23:05:18+08:00">2023-03-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>变量和函数命名要遵循同一的规范</p>
-<p>命名规范  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n, i, u, dw... = <span class="number">0</span>;</span><br><span class="line"><span class="type">char</span> c, ch = ‘\<span class="number">0</span>’;</span><br><span class="line"><span class="type">float</span> f, flt = <span class="number">0.0f</span>;</span><br><span class="line"><span class="type">double</span> d, dbl = <span class="number">0.0</span>;</span><br></pre></td></tr></table></figure>
-<p>关于cl<br>1.优化选项&#x2F;O1 体积优先,&#x2F;O2 速度优先<br>2.选项&#x2F;WX,把警告当作错误  </p>
-<p>#include中双引号表示优先在当前目录下寻找  </p>
-<p>变量声明时需要初始化，以避免程序后续行为的不确定性</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/28/CR-Day9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/28/CR-Day9/" class="post-title-link" itemprop="url">CR-Day9</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-03-28 23:00:12 / Modified: 23:03:34" itemprop="dateCreated datePublished" datetime="2023-03-28T23:00:12+08:00">2023-03-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><p>字符串与字符数组区别<br>1.字符串有格式化，而字符数组没有格式化<br>2.字符串有两种格式c-style和pascal-style</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c-style     :h e l l o \0</span><br><span class="line">pascal-style:5 h e l l o</span><br></pre></td></tr></table></figure>
-<p>c-style多用于即使通信，pascal-style多用于数据储存</p>
-<p>unicode编码<br>1.用于解决编码表示不足的问题<br>2.中文编码占两字节且表示为负数  </p>
-<p>杂项<br>1.赋值运算的结果为等号左值<br>2.加减乘除的运算结果的类型为对应类型常量  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -887,14 +939,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

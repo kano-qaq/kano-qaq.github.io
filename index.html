@@ -157,6 +157,386 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/10/ASM06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/10/ASM06/" class="post-title-link" itemprop="url">ASM06</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-10 13:50:39 / Modified: 13:51:28" itemprop="dateCreated datePublished" datetime="2023-09-10T13:50:39+08:00">2023-09-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>MASM使用:<br>声明段<br>SegName SEGMENT<br>SegName ENDS</p>
+<p>声明堆栈段<br>SegName SEGMENT stack<br>SegName ENDS</p>
+<p>声明第一条汇编指令<br>START:<br>Asm Ins<br>…<br>END START</p>
+<p>取字符串的段内偏移<br>mov reg,offset StringName</p>
+<p>设置标签(Lable)<br>Asm Ins<br>LableName:<br>Asm Ins</p>
+<p>运算指令<br>ADC&#x2F;SBB<br>带进位的加法&#x2F;减法</p>
+<p>IMUL&#x2F;IDIV<br>带符号的乘法&#x2F;除法</p>
+<p>INC和DEC指令不影响CF标志位</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/08/ASM05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/08/ASM05/" class="post-title-link" itemprop="url">ASM05</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-08 20:57:12 / Modified: 20:58:49" itemprop="dateCreated datePublished" datetime="2023-09-08T20:57:12+08:00">2023-09-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>数据传输指令</p>
+<p>MOV reg&#x2F;mem,imm<br>MOV reg&#x2F;mem&#x2F;seg,reg<br>将数据从右操作数移动到左操作数  </p>
+<p>XCHG reg&#x2F;mem,reg<br>XCHG reg,mem<br>交换左右操作数的值  </p>
+<p>XLAT<br>实际执行的操作等价于MOV AL,DS:[BX+AL]  </p>
+<p>PUSH mem&#x2F;reg&#x2F;seg<br>实际执行的操作等价于SP-&#x3D;2;MOV [SP],mem&#x2F;reg&#x2F;seg  </p>
+<p>POP mem&#x2F;reg&#x2F;seg<br>实际执行的操作等价于MOV mem&#x2F;reg&#x2F;seg,[SP];SP+&#x3D;2;  </p>
+<p>PUSHF&#x2F;POPF<br>将标志寄存器的值压入栈&#x2F;将栈顶的值赋值给标志寄存器  </p>
+<p>LAHF&#x2F;SAHF<br>将标志寄存器的低8位赋值到AH&#x2F;将AH的值赋值到标志寄存器的低8位  </p>
+<p>LEA reg16,mem<br>将mem的表达式值(该值为地址)赋值到寄存器  </p>
+<p>LDS\LES reg16,mem<br>实际执行的操作等价于MOV reg16,mem;PUSH mem+2;POP DS\ES  </p>
+<p>IN AL,端口号<br>读取设备的数据</p>
+<p>OUT 端口号,AL<br>向设备写入数据</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/08/ASM04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/08/ASM04/" class="post-title-link" itemprop="url">ASM04</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-08 10:49:36 / Modified: 10:50:56" itemprop="dateCreated datePublished" datetime="2023-09-08T10:49:36+08:00">2023-09-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>寻址方式<br>1.立即数寻址<br>    mov ax, 0<br>2.寄存器寻址<br>    sub ax, ax<br>内存寻址：<br>3.直接寻址<br>    mov [2000], ax<br>    mov ax,[2000]<br>4.寄存器间接寻址<br>    mov [bx], ax<br>    mov [bp], ax<br>    mov [si], ax<br>    mov [di], ax<br>5.寄存器相对寻址<br>    mov [bx+offset], ax<br>    mov [bp+offset], ax<br>    mov [si+offset], ax<br>    mov [di+offset], ax<br>6.基址变址寻址方式<br>基址寄存器：bp bx<br>变址寄存器:  si di<br>    mov [bp+si], ax<br>    mov [bp+di], ax<br>    mov [bx+di], ax<br>    mov [bx+si], ax<br>7.相对基址变址寻址<br>    mov [bp+si+offset], ax<br>    mov [bp+di+offset], ax<br>    mov [bx+di+offset], ax<br>    mov [bx+si+offset], ax  </p>
+<p>特殊的位:<br>最低位:用来表示操作的字长。0表示8位,1表示16位<br>次低位:用来表示数据的流向。0表示reg-&gt;mem，1表示mem-&gt;reg</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/06/ASM03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/06/ASM03/" class="post-title-link" itemprop="url">ASM03</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-06 10:17:31 / Modified: 10:18:17" itemprop="dateCreated datePublished" datetime="2023-09-06T10:17:31+08:00">2023-09-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>段寄存器:<br>cs(Code Segment):代码段寄存器<br>ds(Data Segment):数据段寄存器<br>ss(Stack Segment):栈段寄存器<br>es(Extra Segment):附加段寄存器</p>
+<p>段超越前缀:<br>在访问内存时可以指定访问的是哪一个段,如cs:1314</p>
+<p>物理地址和逻辑地址<br>逻辑地址&#x3D;&gt;物理地址:<br>逻辑地址(0c3a:0100)对应的物理地址为0c3a0+0100&#x3D;&gt;0c4a0<br>因此，一个物理地址可以有多个逻辑地址</p>
+<p>段寄存器搭配:<br>cs:ip<br>ss:sp&#x2F;ss:bp<br>ds:bx<br>es:si&#x2F;es:di</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/05/ASM02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/05/ASM02/" class="post-title-link" itemprop="url">ASM02</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-05 10:42:10 / Modified: 10:43:23" itemprop="dateCreated datePublished" datetime="2023-09-05T10:42:10+08:00">2023-09-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>通用寄存器:<br>AX(累加寄存器):用于算数,逻辑运算以及与外设传递信息<br>BX(基址寄存器):存放内存基址<br>CX(计数寄存器):存放循环的次数<br>DX(数据寄存器):常用于放双字的高16位<br>SI(源变址寄存器):<br>DI(目标变址寄存器):<br>SP(堆栈指针寄存器):指向栈顶的位置<br>BP(堆栈基址寄存器):指向栈底的位置</p>
+<p>标志位:<br>零位标志ZF(Zero Flag):指令结果为零，置1否则置0<br>符号标志SF(Sign Flag):指令结果为负数时，置1否则置0<br>溢出标志OF(Overflow Flag):指令导致溢出时，置1否则置0<br>奇偶标志PF(Parity Flag):指令结果中有偶数个1时，置1否则置0<br>辅位标志AF(Auxiliary Carry Flag):低四位发生进位时，置1否则置0<br>进位标志CF(Carry Flag):最高位发生进位时，置1否则置0<br>陷阱标志TF(Trap Flag):用于单步执行程序。置1时，每执行一条指令后产生一个中断<br>中断标志IF(Interrupt Enable Flag):控制外部中断的相应。置1时，允许响应外部中断<br>方向标志DF(Direction Flag):控制字符串操作的方向。置1时，方向为高地址到低地址</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/04/ASM01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/04/ASM01/" class="post-title-link" itemprop="url">ASM01</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-04 12:01:46 / Modified: 12:02:35" itemprop="dateCreated datePublished" datetime="2023-09-04T12:01:46+08:00">2023-09-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>机器语言和汇编语言转换:<br>机器语言&#x3D;&gt;反汇编器&#x3D;&gt;汇编语言<br>汇编语言&#x3D;&gt;翻译器&#x3D;&gt;机器语言</p>
+<p>高级语言和汇编语言关系:<br>1.高级语言与机器硬件无关，汇编语言与机器硬件相关<br>2.高级语言&#x3D;&gt;编译器&#x3D;&gt;某种cpu架构汇编</p>
+<p>指令集:<br>1.精简指令集(RISC),如ARM<br>2.复杂指令集(CISC),如Intel<br>在Intel中8086为16位指令集，80386为32位指令集</p>
+<p>在低版本windows中可以通过debug.exe来查看16位指令集</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/24/COM05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -433,437 +813,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/19/COM01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/19/COM01/" class="post-title-link" itemprop="url">COM01</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-08-19 00:04:49" itemprop="dateCreated datePublished" datetime="2023-08-19T00:04:49+08:00">2023-08-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:39:42" itemprop="dateModified" datetime="2023-08-31T19:39:42+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>COM(组件对象模型)</p>
-<p>可以跨平统，跨语言</p>
-<p>动态链接库是实现的基础</p>
-<p>插件设计模式<br>插件是一种遵循一定规范的应用程序接口编写出来的软件<br>插件定义:<br>1.插件有主程序没有的功能<br>2.插件不能脱离主程序单独运行</p>
-<p>设计:<br>1.接口设计<br>导出:函数导出和类导出<br>2.主程序<br>3.组件实现</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/16/DataBase06/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/16/DataBase06/" class="post-title-link" itemprop="url">DataBase06</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-08-16 10:00:29" itemprop="dateCreated datePublished" datetime="2023-08-16T10:00:29+08:00">2023-08-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:40:33" itemprop="dateModified" datetime="2023-08-31T19:40:33+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>架构方面:<br>两层架构:<br>客户端可以直接操作数据库</p>
-<p>三层架构:<br>客户端只与服务端交互，服务端根据客户端发送的数据来操作数据库<br>通常情况下，服务端和数据库不在同一台主机</p>
-<p>灾难方面:<br>备份:<br>物理备份(备份二进制数据):<br>完整备份(备份当前整个数据库)<br>差异备份(只备份与参照有差异的部分)<br>增量备份(只备份当前增加的部分)<br>逻辑备份(备份SQL语句):</p>
-<p>备份时机:<br>冷备份(备份时不能操作数据库)<br>温备份(备份时可以查询)<br>热备份(备份时可以修改数据)</p>
-<p>mysqlbinlog用于解析数据操作日志文件</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/14/DataBase05/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/14/DataBase05/" class="post-title-link" itemprop="url">DataBase05</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-08-14 10:26:11" itemprop="dateCreated datePublished" datetime="2023-08-14T10:26:11+08:00">2023-08-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:40:42" itemprop="dateModified" datetime="2023-08-31T19:40:42+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>存储过程(创建时需要转换结束符):<br>delimiter &#x2F;&#x2F;<br>create procedure fun_name([in&#x2F;out] param_name param_type)<br>begin<br>xxx;<br>xxx;<br>end&#x2F;&#x2F;<br>delimiter ;</p>
-<p>调用存储过程:<br>call fun_name(param1,…)</p>
-<p>临时变量:<br>@var_name</p>
-<p>触发器(在做指定操作之前先完成触发器的操作):<br>delimiter &#x2F;&#x2F;<br>create trigger trigger_name<br>before xxx[指定的操作] for each row<br>begin<br>xxx;<br>end&#x2F;&#x2F;<br>delimiter ;</p>
-<p>事务(保证操作的原子性):<br>start transaction(开始事务)<br>xxx;<br>xxx;<br>commit(提交事务)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/14/DataBase04/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/14/DataBase04/" class="post-title-link" itemprop="url">DataBase04</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-08-14 09:56:54" itemprop="dateCreated datePublished" datetime="2023-08-14T09:56:54+08:00">2023-08-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:40:53" itemprop="dateModified" datetime="2023-08-31T19:40:53+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>SQL语法<br>单表查询:<br>select column_name1,… from table_name<br>从table_name表中查询column_name1表项的值</p>
-<p>别名:<br>select column_name1 as new_name,… from table_name<br>从table_name表中查询column_name1表项的值，但是显示结果时column_name1变为new_name</p>
-<p>字段运算:<br>select column_name1-10 from table_name<br>从table_name表中查询column_name1表项的值，减去10的结果</p>
-<p>where表达式:<br>select column_name1 from table_name where expr<br>从table_name表中查询符合expr表达式的column_name1表项的值</p>
-<p>集合:<br>select * from table_name where column_name1 in (xxx,yyy)<br>从table_name表中查询column_name1表项在集合(xxx,yyy)中的所有值</p>
-<p>范围:<br>select * from table_name where column_name1 between x and y<br>从table_name表中查询column_name1表项的值大于等于x且小于等于y的所有值</p>
-<p>排序:<br>select * from table_name order by column_name1 [asc&#x2F;desc]<br>从table_name表中查询按column_name1[升序&#x2F;降序]的所有值</p>
-<p>模糊匹配<br>select * from table_name where column_name1 like ‘a% &#x2F; _b% &#x2F; a_b &#x2F; %a%’<br>匹配a开头的字符串&#x2F;任意字符开头第二个字符为b后接任意字符的串&#x2F;<br>第一个字符为a第二个字符任意第三个字符为b的串&#x2F;包含字符a的任意串</p>
-<p>多表查询<br>select * from table_name1, table_name2<br>将从table_name1和table_name2查询到的结果拼成一张表</p>
-<p>自然连接<br>select * from table_name1 natural join table_name2</p>
-<p>并集:<br>(集合1) union (集合2)</p>
-<p>交集:<br>(集合1) intersect (集合2)</p>
-<p>并集<br>(集合1) except (集合2)</p>
-<p>子查询<br>select * from table_name1 where column_name1 &#x3D;<br>(select column_name1 from table_name2 where column_name2 &#x3D; xxx)</p>
-<p>测试子查询<br>select * from table_name1 where exists<br>(select * from table_name2 where table_name1.column_name1 &#x3D; table_name2.column_name1)<br>exists关键字可以提升查询效率</p>
-<p>指定结果显示个数和从哪开始显示:<br>select * from table_name order by column_name desc limit show_count offset start_offset <br>select * from table_name order by column_name desc limit start_offset, show_count</p>
-<p>聚集函数:<br>求平均值avg(),求总和sum(),求最大max(),求最小min(),求个数count()</p>
-<p>分组(需要和聚集函数搭配使用):<br>select column_name1,avg(column_name2) from table_name group by column_name1<br>查询table_name表中由column_name1的值为分组的column_name2的平均值</p>
-<p>临时表:<br>select * from(<br>select * from table_name<br>)t1<br>查询由查询table_name得到的结果作为表的所有表项</p>
-<p>having:<br>为分组添加限制条件<br>select column_name1,avg(column_name2) from<br>table_name group by column_name1<br>having xxx &#x3D; xxx</p>
-<p>内连接:<br>select * from table_name1 inner join table_name2<br>on table_name1.column_name &#x3D; table_name2.column_name</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/11/DataBase03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/11/DataBase03/" class="post-title-link" itemprop="url">DataBase03</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-08-11 13:00:51" itemprop="dateCreated datePublished" datetime="2023-08-11T13:00:51+08:00">2023-08-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:41:03" itemprop="dateModified" datetime="2023-08-31T19:41:03+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>SQL语法<br>表的基本操作:增加，删除，修改，查询</p>
-<p>创建数据库:<br>CREATE DATABASE 数据库名</p>
-<p>删除数据库:<br>DROP DATABASE 数据库名</p>
-<p>允许名字中带有空格，需要使用&#96;号包起来。</p>
-<p>创建表:<br>CREATE TABLE 数据库名.表名(<br>表项名1 数据类型1 [PRIMARY KEY],<br>表项名2 数据类型2,<br>…<br>[CONSTRAINT PRIMARY KEY(需设为主键的表项名,…)] –设为主键<br>[CONSTRAINT FOREIGN KEY(需设为外键的表项名) REFERENCES 表名(主键),…]<br>)</p>
-<p>删除表:<br>DROP 表名</p>
-<p>插入表项:<br>INSERT INTO 表名 VALUES(…)</p>
-<p>修改表项:<br>UPDATE 表名 SET 表项&#x3D;… WHERE 表项&#x3D;…</p>
-<p>查询表项:<br>SELECT * FROM 表名</p>
-<p>删除表项:<br>DELETE FROM 表名 WHERE 表项&#x3D;…</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/09/DataBase02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/09/DataBase02/" class="post-title-link" itemprop="url">DataBase02</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-08-09 09:53:35 / Modified: 10:25:10" itemprop="dateCreated datePublished" datetime="2023-08-09T09:53:35+08:00">2023-08-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>约束(数据完整性)<br>1、主键约束 primary key 确保字段值不重复不为NULL   PK<br>2、外键约束 foreign key 确保字段值必须来自于指定表  FK<br>3、唯一约束 unique 确保字段值不重复<br>4、检查约束 check 确保字段值的取值范围<br>5、缺省约束 default  给相应字段提供默认值</p>
-<p>实体关系转表：<br>1 对 1   合并两张表<br>1 对 m  少的主键当做多的外键<br>m 对 n  创建一个新表（关系表名）， 将两个表的主键当做新表的复合主键</p>
-<p>3范式(3NF)<br>第一范式：必须有主键， 字段原子<br>第二范式：所有非关键字段都是有主关键字决定<br>第三范式：所有非关键字段都是有复合关键字共同决定</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -929,14 +882,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
