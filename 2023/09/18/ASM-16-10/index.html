@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="通用寄存器:AX(累加寄存器):用于算数,逻辑运算以及与外设传递信息BX(基址寄存器):存放内存基址CX(计数寄存器):存放循环的次数DX(数据寄存器):常用于放双字的高16位SI(源变址寄存器):DI(目标变址寄存器):SP(堆栈指针寄存器):指向栈顶的位置BP(堆栈基址寄存器):指向栈底的位置 标志位:零位标志ZF(Zero Flag):指令结果为零，置1否则置0符号标志SF(Sign Fla">
+  <meta name="description" content="伪指令 assume用于假设段寄存器的基址，可用于变量的直接访问 条件控制.if xxx&#x3D;&#x3D;xxxstatement.endif .while xxx&#x3D;&#x3D;xxxstatement.endw 函数实现:functionName proc [far&#x2F;near] [stdcall&#x2F;c] uses regName, arg1:[word&amp;#x2F">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ASM02">
-<meta property="og:url" content="http://example.com/2023/09/05/ASM02/index.html">
+<meta property="og:title" content="ASM(16)10">
+<meta property="og:url" content="http://example.com/2023/09/18/ASM-16-10/index.html">
 <meta property="og:site_name" content="kkano">
-<meta property="og:description" content="通用寄存器:AX(累加寄存器):用于算数,逻辑运算以及与外设传递信息BX(基址寄存器):存放内存基址CX(计数寄存器):存放循环的次数DX(数据寄存器):常用于放双字的高16位SI(源变址寄存器):DI(目标变址寄存器):SP(堆栈指针寄存器):指向栈顶的位置BP(堆栈基址寄存器):指向栈底的位置 标志位:零位标志ZF(Zero Flag):指令结果为零，置1否则置0符号标志SF(Sign Fla">
+<meta property="og:description" content="伪指令 assume用于假设段寄存器的基址，可用于变量的直接访问 条件控制.if xxx&#x3D;&#x3D;xxxstatement.endif .while xxx&#x3D;&#x3D;xxxstatement.endw 函数实现:functionName proc [far&#x2F;near] [stdcall&#x2F;c] uses regName, arg1:[word&amp;#x2F">
 <meta property="og:locale">
-<meta property="article:published_time" content="2023-09-05T02:42:10.000Z">
-<meta property="article:modified_time" content="2023-09-05T02:43:23.417Z">
+<meta property="article:published_time" content="2023-09-18T02:39:08.000Z">
+<meta property="article:modified_time" content="2023-09-18T02:40:57.220Z">
 <meta property="article:author" content="kkano">
-<meta property="article:tag" content="asm">
+<meta property="article:tag" content="asm16">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/09/05/ASM02/">
+<link rel="canonical" href="http://example.com/2023/09/18/ASM-16-10/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>ASM02 | kkano</title>
+  <title>ASM(16)10 | kkano</title>
   
 
 
@@ -161,7 +161,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/05/ASM02/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/18/ASM-16-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -174,7 +174,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ASM02
+          ASM(16)10
         </h1>
 
         <div class="post-meta">
@@ -185,7 +185,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-09-05 10:42:10 / Modified: 10:43:23" itemprop="dateCreated datePublished" datetime="2023-09-05T10:42:10+08:00">2023-09-05</time>
+              <time title="Created: 2023-09-18 10:39:08 / Modified: 10:40:57" itemprop="dateCreated datePublished" datetime="2023-09-18T10:39:08+08:00">2023-09-18</time>
             </span>
 
           
@@ -199,8 +199,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>通用寄存器:<br>AX(累加寄存器):用于算数,逻辑运算以及与外设传递信息<br>BX(基址寄存器):存放内存基址<br>CX(计数寄存器):存放循环的次数<br>DX(数据寄存器):常用于放双字的高16位<br>SI(源变址寄存器):<br>DI(目标变址寄存器):<br>SP(堆栈指针寄存器):指向栈顶的位置<br>BP(堆栈基址寄存器):指向栈底的位置</p>
-<p>标志位:<br>零位标志ZF(Zero Flag):指令结果为零，置1否则置0<br>符号标志SF(Sign Flag):指令结果为负数时，置1否则置0<br>溢出标志OF(Overflow Flag):指令导致溢出时，置1否则置0<br>奇偶标志PF(Parity Flag):指令结果中有偶数个1时，置1否则置0<br>辅位标志AF(Auxiliary Carry Flag):低四位发生进位时，置1否则置0<br>进位标志CF(Carry Flag):最高位发生进位时，置1否则置0<br>陷阱标志TF(Trap Flag):用于单步执行程序。置1时，每执行一条指令后产生一个中断<br>中断标志IF(Interrupt Enable Flag):控制外部中断的相应。置1时，允许响应外部中断<br>方向标志DF(Direction Flag):控制字符串操作的方向。置1时，方向为高地址到低地址</p>
+        <p>伪指令</p>
+<p>assume<br>用于假设段寄存器的基址，可用于变量的直接访问</p>
+<p>条件控制<br>.if xxx&#x3D;&#x3D;xxx<br>statement<br>.endif</p>
+<p>.while xxx&#x3D;&#x3D;xxx<br>statement<br>.endw</p>
+<p>函数实现:<br>functionName proc [far&#x2F;near] [stdcall&#x2F;c] uses regName, arg1:[word&#x2F;byte],…<br>local @local_var1:[word&#x2F;byte]<br>local @local_arg[10]:[word&#x2F;byte]</p>
+<p>statement<br>functionName endp  </p>
+<p>函数声明<br>functionName proto [far&#x2F;near] [stdcall&#x2F;c],:[word&#x2F;byte],…  </p>
+<p>结构体声明<br>structName struct 2(对齐值)<br>member1 dw ?<br>member2 db ?<br>…<br>structName ends</p>
 
     </div>
 
@@ -210,7 +216,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/asm/" rel="tag"># asm</a>
+              <a href="/tags/asm16/" rel="tag"># asm16</a>
           </div>
 
         
@@ -219,12 +225,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/09/04/ASM01/" rel="prev" title="ASM01">
-      <i class="fa fa-chevron-left"></i> ASM01
+    <a href="/2023/09/15/ASM-16-09/" rel="prev" title="ASM(16)09">
+      <i class="fa fa-chevron-left"></i> ASM(16)09
     </a></div>
       <div class="post-nav-item">
-    <a href="/2023/09/06/ASM03/" rel="next" title="ASM03">
-      ASM03 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/09/18/ASM-32-01/" rel="next" title="ASM(32)01">
+      ASM(32)01 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -297,14 +303,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">87</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
