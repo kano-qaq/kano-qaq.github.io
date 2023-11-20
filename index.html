@@ -157,6 +157,427 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/20/RE01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/20/RE01/" class="post-title-link" itemprop="url">RE01</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-11-20 22:05:34" itemprop="dateCreated datePublished" datetime="2023-11-20T22:05:34+08:00">2023-11-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/20/MFC%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/20/MFC%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">MFC原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-20 21:58:40 / Modified: 22:01:38" itemprop="dateCreated datePublished" datetime="2023-11-20T21:58:40+08:00">2023-11-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>MFC类设计  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CObject  </span><br><span class="line">|---CCmdTarget  </span><br><span class="line">   |---CWinThread  </span><br><span class="line">   |  |---CWinApp  </span><br><span class="line">   |---CDocument  </span><br><span class="line">   |---CWnd  </span><br><span class="line">      |---CFrameWnd  </span><br><span class="line">      |---CDialog  </span><br><span class="line">      |---CView  </span><br></pre></td></tr></table></figure>
+<p>运行时类型识别(RunTime Type Identify)<br>通过使用结构体记录类型信息，结构体间通过指针记录基类和派生类的关系。<br>通过virtual关键字实现动态获取运行时类型。<br>通过函数指针实现类型的实例化</p>
+<p>序列化设计<br>通过全局的构造函数将需要反序列化的类信息插入到链表中</p>
+<p>统一消息处理<br>1.通过修改消息处理函数实现统一消息处理<br>2.通过虚函数实现获取不同的消息映射表<br>3.通过保存基类的消息映射表实现完全的多态<br>4.通过消息处理函数的虚函数，提供用户自行处理的机会</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/08/ShellCode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/08/ShellCode/" class="post-title-link" itemprop="url">ShellCode</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-08 21:37:26 / Modified: 21:37:42" itemprop="dateCreated datePublished" datetime="2023-11-08T21:37:26+08:00">2023-11-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Windows下ShellCode利用<br>1.栈溢出<br>2.SEH劫持<br>3.C++的虚函数劫持<br>4.ROP(用于突破DEP限制)  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/31/PE06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/10/31/PE06/" class="post-title-link" itemprop="url">PE06</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-10-31 09:51:55 / Modified: 09:52:29" itemprop="dateCreated datePublished" datetime="2023-10-31T09:51:55+08:00">2023-10-31</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>资源表</p>
+<p>IMAGE_RESOURCE_DIRECTORY:描述目录项的属性，主要描述目录中名字项的数量和序号项的数量<br>IMAGE_RESOURCE_DIRECTORY_ENTRY:描述目录下项的属性<br>union1的最高位:1表示是名字,0表示是序号<br>union2的最高位:1表示是目录,0表示是文件<br>IMAGE_RESOURCE_DATA_ENTRY:描述文件项的属性，其中偏移为节内偏移</p>
+<p>图标的提取<br>1.从图标组目录中提取出文件头和图标的序号<br>2.在图标目录中根据序号提取出像素信息</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/31/PE05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/10/31/PE05/" class="post-title-link" itemprop="url">PE05</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-10-31 09:48:52 / Modified: 09:51:11" itemprop="dateCreated datePublished" datetime="2023-10-31T09:48:52+08:00">2023-10-31</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>TLS(线程局部存储)，可以作为线程内的全局变量<br>TLS可用于反调试</p>
+<p>使用TLS<br>申请空间:nIndex&#x3D;TlsAlloc()<br>设置值:TlsSetValue(nIndex,Value)<br>获取值:TlsGetValue(nIndex)</p>
+<p>主线程使用TLS<br>__declspec(thread) 变量声明</p>
+<p>对转发的处理:<br>递归调用GetProcAddr，若命中在导出表范围中则为转发</p>
+<p>数据目录大小有用的表:导入表，重定位表</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/30/PE04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/10/30/PE04/" class="post-title-link" itemprop="url">PE04</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-10-30 11:13:03 / Modified: 11:15:57" itemprop="dateCreated datePublished" datetime="2023-10-30T11:13:03+08:00">2023-10-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>重定位表:<br>使用结构体IMAGE_BASE_RELOCATION来描述<br>IMAGE_BASE_RELOCATION.VirtualAddress:描述分页信息<br>IMAGE_BASE_RELOCATION.SizeOfBlock:描述该结构体大小<br>使用一个柔性数组存储分页中的偏移信息  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/22/PE03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/10/22/PE03/" class="post-title-link" itemprop="url">PE03</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-10-22 21:08:30 / Modified: 21:09:52" itemprop="dateCreated datePublished" datetime="2023-10-22T21:08:30+08:00">2023-10-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>导出表:<br>1.按照函数序号寻址:<br>序号减去Base序号作为下标，用该下标在AddressOfFunctions表中取出地址<br>2.按照函数名称寻址:<br>在AddressOfNames表中逐一和输入的名字进行比较，若有匹配的名字，则以匹配的下标在AddressOfNameOrdinals表中取出值，用取出的值作为AddressOfFunctions表的下标取出地址</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/17/PE02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -335,452 +756,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/11/DEBUG04/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/11/DEBUG04/" class="post-title-link" itemprop="url">DEBUG04</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-11 12:01:55 / Modified: 12:02:54" itemprop="dateCreated datePublished" datetime="2023-10-11T12:01:55+08:00">2023-10-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>调试器硬件断点  </p>
-<p>实现:<br>通过设置调试寄存器的值来实现硬件断点<br>DebugReg7:通过设置相应的位来使得硬件断点生效和定义断点的类型，大小<br>DebugReg6:通过检测相应的位来获取触发的硬件断点是哪个<br>DebugReg0~3:硬件断点的地址</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/10/DEBUG03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/10/DEBUG03/" class="post-title-link" itemprop="url">DEBUG03</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-10 11:27:21 / Modified: 11:39:48" itemprop="dateCreated datePublished" datetime="2023-10-10T11:27:21+08:00">2023-10-10</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>调试器断点  </p>
-<p>只要满足以下条件，就可以作为断点:<br>1.可以停下来<br>2.可以正常执行断点处指令<br>3.断点可以重复使用</p>
-<p>进程ID和进程句柄的关系<br>1.在进行跨进程访问时需要进程句柄</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/10/DEBUG02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/10/DEBUG02/" class="post-title-link" itemprop="url">DEBUG02</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-10 11:27:15 / Modified: 11:29:32" itemprop="dateCreated datePublished" datetime="2023-10-10T11:27:15+08:00">2023-10-10</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>调试器命令设计  </p>
-<p>定义一个结构体，结构体如下  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct Cmd &#123;</span><br><span class="line">const char* szCmd//命令字符串</span><br><span class="line">int (pfnCmdHandle)(char* pArgs[5])//处理命令的函数指针</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>定义一个Cmd结构体的数组，数组中填入相应的命令字符串和函数指针</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/07/DEBUG01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/07/DEBUG01/" class="post-title-link" itemprop="url">DEBUG01</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-07 12:06:10 / Modified: 12:06:47" itemprop="dateCreated datePublished" datetime="2023-10-07T12:06:10+08:00">2023-10-07</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>调试器框架</p>
-<p>1.通过CreatrProcess创建调试进程<br>2.通过WaitForDebugEvent等待调试事件<br>3.自定义事件处理函数来处理事件<br>4.通过ContinueDebugEvent返回处理结果<br>5.重复等待调试事件</p>
-<p>调试事件<br>1.异常事件<br>2.创建线程事件<br>3.创建进程事件<br>4.退出线程事件<br>5.退出进程事件<br>6.加载动态库事件<br>7.卸载动态库事件<br>8.输出调试信息事件<br>9.RIP事件  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/28/ASM-32-08/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/09/28/ASM-32-08/" class="post-title-link" itemprop="url">ASM(32)08</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-09-28 19:55:39 / Modified: 19:57:04" itemprop="dateCreated datePublished" datetime="2023-09-28T19:55:39+08:00">2023-09-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>内联HOOK</p>
-<p>HOOK的作用:监控，修改参数和返回值，拦截调用</p>
-<p>内联HOOK需要解决的问题:<br>1.被替换代码的重定位问题<br>2.被替换的指令是否破坏了指令的完整性<br>对于windows的大部分API来说2的问题不需要考虑</p>
-<p>HOOK的流程<br>1.声明一个自定义的处理函数，该函数最后会跳转会被HOOK的API<br>2.获取目标API的地址，将地址填入处理函数的跳转<br>3.修改目标API的内存属性<br>4.将被覆盖的指令拷贝到处理函数中<br>5.修改目标API的第一条指令为跳转到处理函数</p>
-<p>通用HOOK设计<br>实现一个SetHook函数，参数为目标API和处理函数，申请两块内存，一块用于设置处理函数的寄存器环境，另一块用于保存被覆盖的指令以实现在处理函数中可以调用被HOOK的API。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/26/ASM-32-07/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/09/26/ASM-32-07/" class="post-title-link" itemprop="url">ASM(32)07</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-09-26 11:07:55 / Modified: 11:10:40" itemprop="dateCreated datePublished" datetime="2023-09-26T11:07:55+08:00">2023-09-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>反调试<br>代码检测<br>通过在被检测代码中主动产生一个异常，在异常异常处理函数中检测代码是否被修改。<br>或者通过设置单步异常来执行代码，来实现对每行代码进行检测</p>
-<p>结构化异常处理(SEH)<br>SEH通过链表结构来记录异常处理函数的地址。<br>注册SEH</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push		offset SEH_Exception_Handle</span><br><span class="line">push		fs:[0]</span><br><span class="line">mov		fs:[0],esp</span><br></pre></td></tr></table></figure>
-<p>注销SEH</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push		[ebp-8]</span><br><span class="line">pop		fs:[0]</span><br></pre></td></tr></table></figure>
-<p>windbg中的SEH结构体</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_EXCEPTION_REGISTRATION_RECORD</span><br><span class="line">+0x000 Next             : Ptr32 _EXCEPTION_REGISTRATION_RECORD</span><br><span class="line">+0x004 Handler          : Ptr32     _EXCEPTION_DISPOSITION</span><br></pre></td></tr></table></figure>
-<p>SEH处理函数声明<br>SEH_Exception_Handle proc c<br>参数:<br>ExceptionRecord:ptr EXCEPTION_RECORD，记录异常信息<br>EstablisherFrame:ptr dword，指向注册SEH的栈帧<br>ContextRecord:ptr CONTEXT，记录异常发生时的寄存器环境<br>DispatcherContext:ptr dword<br>处理函数返回值<br>ExceptionContinueExecution(0)，在异常发生的地方继续执行<br>ExceptionContinueSearch(1)，继续搜寻下一个异常处理函数<br>ExceptionNestedException(2)<br>ExceptionCollidedUnwind(3)  </p>
-<p>当异常处理需要跨函数执行时需要恢复堆栈环境</p>
-<p>异常展开<br>通知异常处理函数进行关闭资源的操作</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/25/ASM-32-06/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/09/25/ASM-32-06/" class="post-title-link" itemprop="url">ASM(32)06</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-09-25 11:18:19" itemprop="dateCreated datePublished" datetime="2023-09-25T11:18:19+08:00">2023-09-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-26 11:16:18" itemprop="dateModified" datetime="2023-09-26T11:16:18+08:00">2023-09-26</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>异常</p>
-<p>注册异常处理函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push		offset ExceptionFilter</span><br><span class="line">call		SetUnhandleExceptionFilter</span><br></pre></td></tr></table></figure>
-<p>在异常发生时会调用异常处理函数，异常处理函数的参数为指向异常信息结构体的指针</p>
-<p>在异常处理函数中，不同的返回值执行不同的操作:<br>EXCEPTION_CONTINUE_SEARCH:表示继续搜索可以处理异常的函数<br>EXCEPTION_EXECUTE_HANDLE:表示异常已被处理，但是程序会结束<br>EXCEPTION_CONTINUE_EXECUTION:表示异常已被修复，异常处理函数会将寄存器环境恢复到异常发生时，再继续执行指令，可以通过修改参数的寄存器环境来实现恢复时改变寄存器环境</p>
-<p>在异常发生时，操作系统会捕获到异常，如果程处于被调试状态，操作系统会将该异常发给调试器。如果不是处于被调试状态，那么异常将发给程序自己。</p>
-<p>windowsAPI不保存eax,edx寄存器</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -850,14 +825,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">108</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
