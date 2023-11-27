@@ -157,6 +157,140 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/08/ASM-16-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/08/ASM-16-04/" class="post-title-link" itemprop="url">ASM(16)04</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-09-08 10:49:36" itemprop="dateCreated datePublished" datetime="2023-09-08T10:49:36+08:00">2023-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-09-18 10:42:49" itemprop="dateModified" datetime="2023-09-18T10:42:49+08:00">2023-09-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>寻址方式<br>1.立即数寻址<br>    mov ax, 0<br>2.寄存器寻址<br>    sub ax, ax<br>内存寻址：<br>3.直接寻址<br>    mov [2000], ax<br>    mov ax,[2000]<br>4.寄存器间接寻址<br>    mov [bx], ax<br>    mov [bp], ax<br>    mov [si], ax<br>    mov [di], ax<br>5.寄存器相对寻址<br>    mov [bx+offset], ax<br>    mov [bp+offset], ax<br>    mov [si+offset], ax<br>    mov [di+offset], ax<br>6.基址变址寻址方式<br>基址寄存器：bp bx<br>变址寄存器:  si di<br>    mov [bp+si], ax<br>    mov [bp+di], ax<br>    mov [bx+di], ax<br>    mov [bx+si], ax<br>7.相对基址变址寻址<br>    mov [bp+si+offset], ax<br>    mov [bp+di+offset], ax<br>    mov [bx+di+offset], ax<br>    mov [bx+si+offset], ax  </p>
+<p>特殊的位:<br>最低位:用来表示操作的字长。0表示8位,1表示16位<br>次低位:用来表示数据的流向。0表示reg-&gt;mem，1表示mem-&gt;reg</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/06/ASM-16-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/06/ASM-16-03/" class="post-title-link" itemprop="url">ASM(16)03</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-09-06 10:17:31" itemprop="dateCreated datePublished" datetime="2023-09-06T10:17:31+08:00">2023-09-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-09-18 10:42:55" itemprop="dateModified" datetime="2023-09-18T10:42:55+08:00">2023-09-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>段寄存器:<br>cs(Code Segment):代码段寄存器<br>ds(Data Segment):数据段寄存器<br>ss(Stack Segment):栈段寄存器<br>es(Extra Segment):附加段寄存器</p>
+<p>段超越前缀:<br>在访问内存时可以指定访问的是哪一个段,如cs:1314</p>
+<p>物理地址和逻辑地址<br>逻辑地址&#x3D;&gt;物理地址:<br>逻辑地址(0c3a:0100)对应的物理地址为0c3a0+0100&#x3D;&gt;0c4a0<br>因此，一个物理地址可以有多个逻辑地址</p>
+<p>段寄存器搭配:<br>cs:ip<br>ss:sp&#x2F;ss:bp<br>ds:bx<br>es:si&#x2F;es:di</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/05/ASM-16-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -705,160 +839,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/14/DataBase05/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/14/DataBase05/" class="post-title-link" itemprop="url">DataBase05</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-08-14 10:26:11" itemprop="dateCreated datePublished" datetime="2023-08-14T10:26:11+08:00">2023-08-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:40:42" itemprop="dateModified" datetime="2023-08-31T19:40:42+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>存储过程(创建时需要转换结束符):<br>delimiter &#x2F;&#x2F;<br>create procedure fun_name([in&#x2F;out] param_name param_type)<br>begin<br>xxx;<br>xxx;<br>end&#x2F;&#x2F;<br>delimiter ;</p>
-<p>调用存储过程:<br>call fun_name(param1,…)</p>
-<p>临时变量:<br>@var_name</p>
-<p>触发器(在做指定操作之前先完成触发器的操作):<br>delimiter &#x2F;&#x2F;<br>create trigger trigger_name<br>before xxx[指定的操作] for each row<br>begin<br>xxx;<br>end&#x2F;&#x2F;<br>delimiter ;</p>
-<p>事务(保证操作的原子性):<br>start transaction(开始事务)<br>xxx;<br>xxx;<br>commit(提交事务)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/14/DataBase04/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/08/14/DataBase04/" class="post-title-link" itemprop="url">DataBase04</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-08-14 09:56:54" itemprop="dateCreated datePublished" datetime="2023-08-14T09:56:54+08:00">2023-08-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:40:53" itemprop="dateModified" datetime="2023-08-31T19:40:53+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>SQL语法<br>单表查询:<br>select column_name1,… from table_name<br>从table_name表中查询column_name1表项的值</p>
-<p>别名:<br>select column_name1 as new_name,… from table_name<br>从table_name表中查询column_name1表项的值，但是显示结果时column_name1变为new_name</p>
-<p>字段运算:<br>select column_name1-10 from table_name<br>从table_name表中查询column_name1表项的值，减去10的结果</p>
-<p>where表达式:<br>select column_name1 from table_name where expr<br>从table_name表中查询符合expr表达式的column_name1表项的值</p>
-<p>集合:<br>select * from table_name where column_name1 in (xxx,yyy)<br>从table_name表中查询column_name1表项在集合(xxx,yyy)中的所有值</p>
-<p>范围:<br>select * from table_name where column_name1 between x and y<br>从table_name表中查询column_name1表项的值大于等于x且小于等于y的所有值</p>
-<p>排序:<br>select * from table_name order by column_name1 [asc&#x2F;desc]<br>从table_name表中查询按column_name1[升序&#x2F;降序]的所有值</p>
-<p>模糊匹配<br>select * from table_name where column_name1 like ‘a% &#x2F; _b% &#x2F; a_b &#x2F; %a%’<br>匹配a开头的字符串&#x2F;任意字符开头第二个字符为b后接任意字符的串&#x2F;<br>第一个字符为a第二个字符任意第三个字符为b的串&#x2F;包含字符a的任意串</p>
-<p>多表查询<br>select * from table_name1, table_name2<br>将从table_name1和table_name2查询到的结果拼成一张表</p>
-<p>自然连接<br>select * from table_name1 natural join table_name2</p>
-<p>并集:<br>(集合1) union (集合2)</p>
-<p>交集:<br>(集合1) intersect (集合2)</p>
-<p>并集<br>(集合1) except (集合2)</p>
-<p>子查询<br>select * from table_name1 where column_name1 &#x3D;<br>(select column_name1 from table_name2 where column_name2 &#x3D; xxx)</p>
-<p>测试子查询<br>select * from table_name1 where exists<br>(select * from table_name2 where table_name1.column_name1 &#x3D; table_name2.column_name1)<br>exists关键字可以提升查询效率</p>
-<p>指定结果显示个数和从哪开始显示:<br>select * from table_name order by column_name desc limit show_count offset start_offset <br>select * from table_name order by column_name desc limit start_offset, show_count</p>
-<p>聚集函数:<br>求平均值avg(),求总和sum(),求最大max(),求最小min(),求个数count()</p>
-<p>分组(需要和聚集函数搭配使用):<br>select column_name1,avg(column_name2) from table_name group by column_name1<br>查询table_name表中由column_name1的值为分组的column_name2的平均值</p>
-<p>临时表:<br>select * from(<br>select * from table_name<br>)t1<br>查询由查询table_name得到的结果作为表的所有表项</p>
-<p>having:<br>为分组添加限制条件<br>select column_name1,avg(column_name2) from<br>table_name group by column_name1<br>having xxx &#x3D; xxx</p>
-<p>内连接:<br>select * from table_name1 inner join table_name2<br>on table_name1.column_name &#x3D; table_name2.column_name</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -928,7 +908,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
