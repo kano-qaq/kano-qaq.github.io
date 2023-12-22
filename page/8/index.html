@@ -157,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/26/CR-MFC07/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/14/Windows09/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -171,7 +171,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/26/CR-MFC07/" class="post-title-link" itemprop="url">CR-MFC07</a>
+            <a href="/2023/07/14/Windows09/" class="post-title-link" itemprop="url">Windows09</a>
         </h2>
 
         <div class="post-meta">
@@ -181,14 +181,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-26 11:48:01" itemprop="dateCreated datePublished" datetime="2023-06-26T11:48:01+08:00">2023-06-26</time>
+              <time title="Created: 2023-07-14 10:37:46" itemprop="dateCreated datePublished" datetime="2023-07-14T10:37:46+08:00">2023-07-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:45:14" itemprop="dateModified" datetime="2023-08-31T19:45:14+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:44:08" itemprop="dateModified" datetime="2023-08-31T19:44:08+08:00">2023-08-31</time>
               </span>
 
           
@@ -202,11 +202,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>撤销和重做:<br>1.需要两个链表，m_UndoList和m_RedoList<br>2.每做一个操作就需要把该操作添加到m_UndoList链表尾部。<br>3.撤销时从m_UndoList链表尾部的元素移动到m_RedoList链表尾部<br>4.重做时从m_RedoList链表尾部的元素移动到m_UndoList链表尾部  </p>
-<p>命令设计模式:<br>1.把用户可以执行的每个操作都抽象为一条命令<br>2.拥有一个命令管理器，命令管理器负责添加命令到撤销链表，执行撤销操作和重做操作<br>3.每一条命令都有它正向操作和反向操作  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class ICommand</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">  virtual int Exce() = 0;</span><br><span class="line">  virtual int UnExce() = 0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class AddCommand :public ICommand</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">  AddCommand(CAD::IShape* pObj, CList&lt;CAD::IShape*&gt; *pShapeList)</span><br><span class="line">  &#123;</span><br><span class="line">    m_pObject = pObj;</span><br><span class="line">    m_pShapeList = pShapeList;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  virtual int Exce()</span><br><span class="line">  &#123;</span><br><span class="line">    //正向操作</span><br><span class="line">    return 0;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  virtual int UnExce()</span><br><span class="line">  &#123;</span><br><span class="line">    //反向操作</span><br><span class="line">    return 0;</span><br><span class="line">  &#125;</span><br><span class="line">private:</span><br><span class="line">  CAD::IShape* m_pObject;</span><br><span class="line">  CList&lt;CAD::IShape*&gt; *m_pShapeList;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>命令管理器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">class CCmdMgr</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">  CCmdMgr()</span><br><span class="line">  &#123;</span><br><span class="line">  &#125;</span><br><span class="line">  ~CCmdMgr()</span><br><span class="line">  &#123;</span><br><span class="line">    POSITION pos = m_UndoList.GetHeadPosition();</span><br><span class="line">    while (pos)</span><br><span class="line">    &#123;</span><br><span class="line">      CAD::ICommand* pCmd = m_UndoList.GetNext(pos);</span><br><span class="line">      delete pCmd;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    pos = m_RedoList.GetHeadPosition();</span><br><span class="line">    while (pos)</span><br><span class="line">    &#123;</span><br><span class="line">      CAD::ICommand* pCmd = m_RedoList.GetNext(pos);</span><br><span class="line">      delete pCmd;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  int AddCommand(ICommand* pCmd)</span><br><span class="line">  &#123;</span><br><span class="line">    m_UndoList.AddTail(pCmd);</span><br><span class="line">    return 0;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  int Undo()</span><br><span class="line">  &#123;</span><br><span class="line">    if (m_UndoList.IsEmpty())</span><br><span class="line">      return -1;</span><br><span class="line"></span><br><span class="line">    ICommand* pCmd = m_UndoList.GetTail();</span><br><span class="line">    int Result = pCmd-&gt;UnExce();</span><br><span class="line">    m_UndoList.RemoveTail();</span><br><span class="line">    m_RedoList.AddTail(pCmd);</span><br><span class="line">    return Result;</span><br><span class="line">  &#125;</span><br><span class="line">  int Redo()</span><br><span class="line">  &#123;</span><br><span class="line">    if (m_RedoList.IsEmpty())</span><br><span class="line">      return -1;</span><br><span class="line"></span><br><span class="line">    ICommand* pCmd = m_RedoList.GetTail();</span><br><span class="line">    int Result = pCmd-&gt;Exce();</span><br><span class="line">    m_RedoList.RemoveTail();</span><br><span class="line">    m_UndoList.AddTail(pCmd);</span><br><span class="line">    return Result;</span><br><span class="line">  &#125;</span><br><span class="line">private:</span><br><span class="line">  CList&lt;ICommand*&gt; m_UndoList;</span><br><span class="line">  CList&lt;ICommand*&gt; m_RedoList;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <p>线程<br>1.windows下线程队列分为32级,优先级越高的线程优先调度,windows采用动态优先级<br>2.同一个进程内的线程之间内存共享,栈不共享<br>3.线程挂起函数实际将线程移动到休息队列<br>4.线程创建<br>CreateThread(<br>NULL,<br>申请的堆栈大小,<br>线程处理函数,<br>传入线程处理函数的参数,<br>线程创建的标志,<br>返回的线程ID<br>)<br>WaitForSingleObject(TID,等待时间)<br>WaitForMultipleObject(等待线程个数,线程数组首地址,是否等待全部,等待时间)</p>
 
       
     </div>
@@ -226,7 +222,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/26/CR-MFC06/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/12/Windows08/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -240,7 +236,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/26/CR-MFC06/" class="post-title-link" itemprop="url">CR-MFC06</a>
+            <a href="/2023/07/12/Windows08/" class="post-title-link" itemprop="url">Windows08</a>
         </h2>
 
         <div class="post-meta">
@@ -250,14 +246,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-26 11:47:56" itemprop="dateCreated datePublished" datetime="2023-06-26T11:47:56+08:00">2023-06-26</time>
+              <time title="Created: 2023-07-12 11:05:06" itemprop="dateCreated datePublished" datetime="2023-07-12T11:05:06+08:00">2023-07-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:45:11" itemprop="dateModified" datetime="2023-08-31T19:45:11+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:44:04" itemprop="dateModified" datetime="2023-08-31T19:44:04+08:00">2023-08-31</time>
               </span>
 
           
@@ -271,10 +267,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>通过实现一个类工厂，实现更好的维护性。</p>
-<p>在基类中添加以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class ICadFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">  virtual IShape* CreateObj() = 0;</span><br><span class="line">&#125;;</span><br><span class="line">template&lt;typename TYPE&gt;</span><br><span class="line">class CFactory :public ICadFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">  virtual IShape* CreateObj()</span><br><span class="line">  &#123;</span><br><span class="line">    return new TYPE();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>实例化时<br>m_pFactory &#x3D; new CAD::CFactory&lt;派生类&gt;();</p>
+          <p>命名管道<br>服务端:<br>1.CreateNamePipe()创建管道,管道名:\\.\pipe\pipename<br>2.ConnectNamePipe()等待连接管道<br>3.通过ReadFile和WriteFile往管道读写数据<br>客户端:<br>1.CreateFile()根据管道名创建管道<br>2.通过ReadFile和WriteFile往管道读写数据</p>
+<p>匿名管道<br>父进程:<br>1.通过CreatePipe创建子进程可以继承的管道<br>2.创建可以有继承句柄属性的子进程<br>3.通过读写管道完成父子进程通信<br>子进程:<br>1.通过读写管道完成父子进程通信</p>
+<p>重定向<br>父进程:<br>1.通过CreatePipe创建子进程可以继承的管道,一个用于子进程的stdin,一个用于子进程的stdout<br>2.设置stdout的读句柄和stdin的写句柄不被继承<br>3.创建子进程,通过STARTUPINFO结构体指定子进程的stdin和stdout和stderror。<br>4.通过读写管道完成读子进程的读写</p>
 
       
     </div>
@@ -294,7 +289,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/21/CR-MFC05/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/11/Windows07/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -308,7 +303,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/21/CR-MFC05/" class="post-title-link" itemprop="url">CR-MFC05</a>
+            <a href="/2023/07/11/Windows07/" class="post-title-link" itemprop="url">Windows07</a>
         </h2>
 
         <div class="post-meta">
@@ -318,14 +313,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-21 12:37:18" itemprop="dateCreated datePublished" datetime="2023-06-21T12:37:18+08:00">2023-06-21</time>
+              <time title="Created: 2023-07-11 09:56:34" itemprop="dateCreated datePublished" datetime="2023-07-11T09:56:34+08:00">2023-07-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:45:07" itemprop="dateModified" datetime="2023-08-31T19:45:07+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:44:00" itemprop="dateModified" datetime="2023-08-31T19:44:00+08:00">2023-08-31</time>
               </span>
 
           
@@ -339,75 +334,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>MFC拥有的dc:<br>CDC<br>CClient dc<br>CpaintDc<br>CWindowDc</p>
-<p>setcapture()捕获窗口外的消息</p>
-<p>双缓冲技术<br>解决屏闪问题  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">CCADView::OnDraw</span><span class="params">(CDC* pDC)</span></span><br><span class="line">&#123; </span><br><span class="line">  CRect rc;</span><br><span class="line">  GetClientRect(rc);</span><br><span class="line">  <span class="comment">//创建兼容dc</span></span><br><span class="line">  CDC MemDC;</span><br><span class="line">  MemDC.CreateCompatibleDC(pDC);</span><br><span class="line">  <span class="comment">//创建兼容位图</span></span><br><span class="line">  CBitmap bitmap;</span><br><span class="line">  bitmap.CreateCompatibleBitmap(pDC, rc.Width(), rc.Height());</span><br><span class="line">  MemDC.SelectObject(bitmap);</span><br><span class="line">  CDC *pCurDC = &amp;MemDC;</span><br><span class="line">  <span class="comment">//清除背景</span></span><br><span class="line">  pCurDC-&gt;FillRect(rc, &amp;m_bkBrush);</span><br><span class="line">  <span class="comment">//绘制图形</span></span><br><span class="line">  POSITION pos = m_ShapeList.GetHeadPosition();</span><br><span class="line">  <span class="keyword">while</span>(pos)</span><br><span class="line">  &#123;</span><br><span class="line">    CAD::IShape *p = m_ShapeList.GetNext(pos);</span><br><span class="line">    p-&gt;OnDraw(pCurDC);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//绘制当前图形</span></span><br><span class="line">  <span class="keyword">if</span> (m_pCurrent != nullptr)</span><br><span class="line">    m_pCurrent-&gt;OnDraw(pCurDC);</span><br><span class="line">  <span class="comment">//拷贝位图到窗口</span></span><br><span class="line">  pDC-&gt;BitBlt(<span class="number">0</span>, <span class="number">0</span>, rc.Width(), rc.Height(), pCurDC, <span class="number">0</span>, <span class="number">0</span>, SRCCOPY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/19/CR-MFC03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/19/CR-MFC03/" class="post-title-link" itemprop="url">CR-MFC03</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-19 10:36:16" itemprop="dateCreated datePublished" datetime="2023-06-19T10:36:16+08:00">2023-06-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:45:04" itemprop="dateModified" datetime="2023-08-31T19:45:04+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>查找文件CFileFinder<br>列表试图CListControl<br>树试图CTreeControl  </p>
-<p>虚函数的使用<br>PreInitDialog()在对话框初始化控件前调用</p>
+          <p>进程通信(IPC)<br>1.通过VM_COPYDATA消息<br>发数据方:<br>(1)定义一个COPYDATASTRUCT结构体用于存放数据<br>(2)通过SendMessage()函数给接收方发送VM_COPYDATA消息,数据作通过WPARAM传递<br>接收方:<br>(1)处理VM_COPYDATA消息<br>事项:使用SendMessage()为了保证临时数据不会析构丢失。</p>
+<p>2.DLL共享<br>通过在DLL中定义一个不会写时拷贝的段实现数据传递。<br>在DLL中定义段:<br>#pragma data_seg(“自定义的段名”)<br>共享的变量(变量需要导出)<br>#pragma data_seg()<br>#pragma comment(linker,”&#x2F;SECTION:自定义的段名,RWS”)</p>
+<p>3.文件映射<br>把文件映射到一段内存，操作映射的内存就是操作文件。</p>
+<p>4.内存共享<br>(1)通过CreateFileMapping()且第一个参数给NULL，最后一个参数给内存的名字，来创建一段物理内存<br>(2)MapViewOfFile()映射<br>(3)其他进程通过OpenFileMapping()获取映射句柄实现共享内存</p>
 
       
     </div>
@@ -427,7 +357,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/16/CR-MFC02/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/09/Windows06/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -441,7 +371,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/16/CR-MFC02/" class="post-title-link" itemprop="url">CR-MFC02</a>
+            <a href="/2023/07/09/Windows06/" class="post-title-link" itemprop="url">Windows06</a>
         </h2>
 
         <div class="post-meta">
@@ -451,14 +381,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-16 22:29:55" itemprop="dateCreated datePublished" datetime="2023-06-16T22:29:55+08:00">2023-06-16</time>
+              <time title="Created: 2023-07-09 17:20:34" itemprop="dateCreated datePublished" datetime="2023-07-09T17:20:34+08:00">2023-07-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:45:00" itemprop="dateModified" datetime="2023-08-31T19:45:00+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:43:56" itemprop="dateModified" datetime="2023-08-31T19:43:56+08:00">2023-08-31</time>
               </span>
 
           
@@ -472,10 +402,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>IDOK，点击后会销毁窗口。</p>
-<p>数据绑定设(ddx)<br>Updata() 参数TRUE&#x2F;FALSE决定操作的意义。</p>
-<p>子类化设计<br>动态子类化:运行点击后才子类化，运行后可以修改<br>静态子类化:运行时直接子类化，运行后不可修改</p>
-<p>消息反射:<br>控件的发送给父窗口的控件消息，父窗口收到消息后，由父窗口发送回控件。</p>
+          <p>1.读取内容:ReadProcessMemory(Pid,RVA,Buffer,read_size,&amp;dwBytes)<br>Pid:被操作进程的ID<br>RVA:被读取的虚拟地址<br>Buffer:接收内容的缓冲区<br>read_size:要读取的大小<br>dwBytes:实际读取的大小<br>2.写入内容:WriteProcessMemory(Pid,RVA,pBuffer,write_size,&amp;dwBytes)<br>Pid:被操作进程的ID<br>RVA:被写入的虚拟地址<br>pBuffer:要写入的缓冲区的地址<br>write_size:要写入的大小<br>dwBytes:实际写入的大小<br>3.基址(不变的地址):代码段 全局地址<br>4.内存分布<br>代码段<br>数据段<br>全局变量(常量和非常量)和静态局部变量<br>栈 地址不固定<br>堆 地址不固定</p>
 
       
     </div>
@@ -495,7 +422,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/15/CR-MFC01/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/09/Windows05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -509,7 +436,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/15/CR-MFC01/" class="post-title-link" itemprop="url">CR-MFC01</a>
+            <a href="/2023/07/09/Windows05/" class="post-title-link" itemprop="url">Windows05</a>
         </h2>
 
         <div class="post-meta">
@@ -519,14 +446,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-15 13:13:51" itemprop="dateCreated datePublished" datetime="2023-06-15T13:13:51+08:00">2023-06-15</time>
+              <time title="Created: 2023-07-09 17:20:30" itemprop="dateCreated datePublished" datetime="2023-07-09T17:20:30+08:00">2023-07-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:44:56" itemprop="dateModified" datetime="2023-08-31T19:44:56+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:43:49" itemprop="dateModified" datetime="2023-08-31T19:43:49+08:00">2023-08-31</time>
               </span>
 
           
@@ -540,9 +467,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>可以通过类向导，实现控件对各种消息的响应。</p>
-<p>获取对话框中控件的对应句柄<br>控件类型指针&#x3D;GetDlgItem(“控件的ID”);</p>
-<p>可以通过使用静态库方便加载调试信息。</p>
+          <p>进程<br>1.进程是应用程序的实例<br>2.进程是抽象的概念，用于管理内存资源和句柄资源<br>3.进程不负责执行代码，线程负责执行代码<br>4.其他的资源以模块为单位来管理，每个模块都有自己独立的资源<br>5.Windows下父子进程关系不紧密<br>6.子进程可以继承父进程的句柄  </p>
 
       
     </div>
@@ -562,7 +487,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/13/CR-SDK06/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/06/Windows04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -576,7 +501,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/13/CR-SDK06/" class="post-title-link" itemprop="url">CR-SDK06</a>
+            <a href="/2023/07/06/Windows04/" class="post-title-link" itemprop="url">Windows04</a>
         </h2>
 
         <div class="post-meta">
@@ -586,14 +511,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-13 19:32:47" itemprop="dateCreated datePublished" datetime="2023-06-13T19:32:47+08:00">2023-06-13</time>
+              <time title="Created: 2023-07-06 19:50:58" itemprop="dateCreated datePublished" datetime="2023-07-06T19:50:58+08:00">2023-07-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:42:23" itemprop="dateModified" datetime="2023-08-31T19:42:23+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:43:44" itemprop="dateModified" datetime="2023-08-31T19:43:44+08:00">2023-08-31</time>
               </span>
 
           
@@ -607,11 +532,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>通过资源导入，可以实现窗口界面的快速生成。<br>如菜单，快捷键，对话框等。</p>
-<p>快捷键:<br>1.加载快捷键资源。HACCEL hAccel &#x3D; LoadAccelerators()<br>2.通过TranslateAccelerator()函数处理快捷键。</p>
-<p>模态对话框<br>创建模态对话框<br>DialogBox(g_hInstance, (LPSTR)IDD_DIALOG1, hwnd, DialogProc)<br>模态对话框有独立的消息队列。</p>
-<p>创建肥模态对话框<br>HWND hDlg &#x3D; CreateDialog(g_hInstance, (LPSTR)IDD_DIALOG3, NULL, DialogProc);<br>ShowWindow(hDlg, SW_SHOWNORMAL);<br>非模态对话框共享消息队列。</p>
-<p>对话框也存在预定义的样式</p>
+          <p>配置文件(config)</p>
+<p>格式:<br>key(键)&#x3D;value(值)</p>
+<p>windows下配置文件:ini文件<br>1.有公有配置文件和私有配置文件<br>2.文件的格式:<br>[Section]<br>key&#x3D;string<br>…</p>
+<p>注册表(系统配置文件)</p>
 
       
     </div>
@@ -631,7 +555,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/13/CR-SDK05/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/04/Windows03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -645,7 +569,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/13/CR-SDK05/" class="post-title-link" itemprop="url">CR-SDK05</a>
+            <a href="/2023/07/04/Windows03/" class="post-title-link" itemprop="url">Windows03</a>
         </h2>
 
         <div class="post-meta">
@@ -655,14 +579,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-13 19:31:19" itemprop="dateCreated datePublished" datetime="2023-06-13T19:31:19+08:00">2023-06-13</time>
+              <time title="Created: 2023-07-04 22:22:46" itemprop="dateCreated datePublished" datetime="2023-07-04T22:22:46+08:00">2023-07-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:42:10" itemprop="dateModified" datetime="2023-08-31T19:42:10+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:43:39" itemprop="dateModified" datetime="2023-08-31T19:43:39+08:00">2023-08-31</time>
               </span>
 
           
@@ -676,10 +600,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>控件:已经注册好了的窗口。<br>系统通过WM_COMMAND消息来向父窗口发送消息。</p>
-<p>控件拥有控件内部的消息。<br>对控件消息的响应通过响应WM_COMMAND消息。<br>控件内部的消息通过HIWORD(wParam)来提取出。<br>控件的id号在CreateWindow()时的hMenu参数给出。<br>对控件的操作通过发送控件拥有的消息来控制。<br>控件的操作只能用sendmessage()操作。</p>
-<p>消息类型:<br>通告消息(对控件的操作)<br>控件消息(控件发送的消息)<br>通用消息(所有控件都有的)</p>
-<p>在listview控件中<br>insert后的同一行只能用set来设置值</p>
+          <p>动态库<br>动态库设计:<br>1.在库中定义一个结构体，结构体的成员为库函数的地址，库只导出获取这个结构体的函数<br>2.在苦衷定义一个类工厂，所有的类都继承类工厂，库只导出实例化类工厂的函数<br>3.在库中申请的资源，需要由库来释放  </p>
+<p>动态库使用:<br>1.LoadLibrary()在初次加载库时会申请内存空间，后续通过LoadLibrary()加载同一个库时只会将库的引用计数加一。FreeLibrary()同理，只有引用计数为零时才卸载库，否则就是引用计数减一。<br>2.DllMain():<br>动态库的DllMain()可以用于初始化。<br>DllMain()在库被加载时或被卸载时自动调用。<br>动态库可以递归的加载。<br>DllMain()必须返回，LoadLibrary()才会返回。<br>3.写时拷贝计数:当操作系统发现由进程修改动态库的内存时，会申请一块一模一样的内存给进程用于修改。<br>4.延迟加载技术(解决软件启动速度慢)，只有当函数被调用时才会加载库(用于静态使用的DLL)。  </p>
+<p>DLL劫持<br>前提:程序target.exe和程序运行时使用的动态库Need.dll<br>1.将Need.dll改名为_Need.dll<br>2.制作一个新的Need.dll<br>3.Need.dll通过函数转发实现程序的正常功能<br>函数转发:(#pragma comment(linker,”&#x2F;EXPORT:FUNC&#x3D;_Need.FUNC,@序号”))<br>4.在DllMain()执行自定义的代码  </p>
+<p>*(version.dll)</p>
 
       
     </div>
@@ -699,7 +623,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/12/CR-SDK04/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/04/Windows02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -713,7 +637,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/12/CR-SDK04/" class="post-title-link" itemprop="url">CR-SDK04</a>
+            <a href="/2023/07/04/Windows02/" class="post-title-link" itemprop="url">Windows02</a>
         </h2>
 
         <div class="post-meta">
@@ -723,14 +647,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-12 09:50:24" itemprop="dateCreated datePublished" datetime="2023-06-12T09:50:24+08:00">2023-06-12</time>
+              <time title="Created: 2023-07-04 22:22:40" itemprop="dateCreated datePublished" datetime="2023-07-04T22:22:40+08:00">2023-07-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:41:58" itemprop="dateModified" datetime="2023-08-31T19:41:58+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:43:17" itemprop="dateModified" datetime="2023-08-31T19:43:17+08:00">2023-08-31</time>
               </span>
 
           
@@ -744,12 +668,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>图片素材的导入:  </p>
-<ol>
-<li><img src="/../images/SDK04.png" alt="SDK04"><br>2.导入后，包含resource.h头文件。</li>
-</ol>
-<p>SetBkmode()设置文字背景。<br>GetAsyncKeyState()异步获取键盘最近一次的键值。<br>AdjustWindowRect()调整窗口矩形。</p>
-<p>BitMap使用<br>1.LoadBitmap()，获得Bitmap的句柄。<br>2.BitBlt()，输出Bitmap。</p>
+          <p>动态库<br>1.导出函数。函数默认不导出。在DLL中导出函数通过RVA(相对地址)导出。<br>2.动态库解析工具dumpbin<br>3.连接时需要声明要使用的DLL的导出函数。<br>通常处理方法:<br>在头文件如下定义  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#define _USRDLL</span><br><span class="line">#define LIBFUNC __declspec(dllexport)</span><br><span class="line">#else</span><br><span class="line">#define LIBFUNC __declspec(dllimport)</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<p>4.导出文件。为了实现不同编译器的兼容性。<br>导出函数：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LIBRARY</span><br><span class="line">EXPORTS</span><br><span class="line">导出函数名=处理函数名1 @序号 NONAME(实现无名导出)</span><br><span class="line">导出函数名=处理函数名2 PRIVATE(限制为只能动态使用)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>5.EXPORT导出:  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#pragma comment(linker,”/EXPORT:粉碎后的函数名”) 或</span><br><span class="line">#pragma comment(linker,”/EXPORT:导出的名字=粉碎后的函数名”)</span><br></pre></td></tr></table></figure>
+<p>6.类在导出时会将整个类的成员导出<br>7.动态加载DLL  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LoadLibrary(”库的路径\库.dll”)，函数返回库加载到的内存中的地址。</span><br><span class="line">GetProcAddress(模块基址,函数名)/GetProcAddress(模块基址,序号)，函数返回函数指针。</span><br><span class="line">FreeLibrary(HMOUDLE)，释放模块。</span><br></pre></td></tr></table></figure>
+<p>8.KONW Dll概念<br>LoadLibrary(”库名(User32)”)<br>系统通过注册表的表项来决定应该加载的DLL。实现了库名与实际加载的DLL的分离。</p>
 
       
     </div>
@@ -769,7 +696,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/10/CR-SDK03/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/02/Windows01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -783,7 +710,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/10/CR-SDK03/" class="post-title-link" itemprop="url">CR-SDK03</a>
+            <a href="/2023/07/02/Windows01/" class="post-title-link" itemprop="url">Windows01</a>
         </h2>
 
         <div class="post-meta">
@@ -793,14 +720,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-10 11:15:52" itemprop="dateCreated datePublished" datetime="2023-06-10T11:15:52+08:00">2023-06-10</time>
+              <time title="Created: 2023-07-02 20:47:26" itemprop="dateCreated datePublished" datetime="2023-07-02T20:47:26+08:00">2023-07-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:41:46" itemprop="dateModified" datetime="2023-08-31T19:41:46+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:42:41" itemprop="dateModified" datetime="2023-08-31T19:42:41+08:00">2023-08-31</time>
               </span>
 
           
@@ -814,13 +741,76 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>热键:<br>1.所有窗口都有效<br>2.热键需要通过函数RegisterHotKey()注册</p>
-<p>窗口组成:<br>1.客户区域<br>2.非客户区域</p>
-<p>WM_PAINT触发条件:存在无效区域</p>
-<p>BeginPaint()的DC带无效区域</p>
-<p>GetDC()只能改客户区</p>
-<p>窗口的句柄与进程无关</p>
-<p>消息类型:<br>WM_TIMER:定时器消息<br>WM_HOTKEY:热键消息<br>WM_KEYDOWN:键盘按下消息<br>WM_KEYUP:键盘弹起消息<br>WM_CHAR:由函数TranslateMessage()将WM_KEYDOWN转化成</p>
+          <p>静态库<br>1.制作静态库时，一个函数或者一个类实现在一个文件中，因为静态库对代码的抽取按obj文件为单位<br>2.静态库是一种把多个obj文件按一定格式压缩在一起的文件。<br>3.静态库的使用:<br>#pragma comment(lib,”静态库的路径”) 或<br>在vs中直接把库文件添加到项目中(源文件\头文件\外部依赖项) 或<br>编辑项目的属性”配置属性-&gt;连接器-&gt;输入-&gt;附加依赖项”中添加库的路径<br>4.缺点:维护性差<br>5.优点:启动速度快  </p>
+<p>动态库<br>1..dll文件存放着所有的函数代码，但是需要一个.lib文件存放所有的函数名用于加载。<br>2.__declspec(dllexport)声明导出<br>3.动态库搜索dll:<br>当前路径&#x3D;&gt;windows目录&#x3D;&gt;windows\system32(SysWOW64)目录&#x3D;&gt;环境变量</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/29/CR-MFC10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/29/CR-MFC10/" class="post-title-link" itemprop="url">CR-MFC10</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-06-29 12:00:43" itemprop="dateCreated datePublished" datetime="2023-06-29T12:00:43+08:00">2023-06-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:45:28" itemprop="dateModified" datetime="2023-08-31T19:45:28+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>获取屏幕的分辨率:<br>int nWidth &#x3D; GetSystemMetrics(SM_CXSCREEN);<br>int nHeight &#x3D; GetSystemMetrics(SM_CYSCREEN);</p>
+<p>CString在手动指定长度后会锁存,需要调用CString.ReleaseBuffer()来解锁存。</p>
+<p>模拟键盘:<br>keybd_event()</p>
+<p>可以通过CImage来将bmp存为其他格式的图片</p>
 
       
     </div>
@@ -839,7 +829,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -905,7 +895,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-count">122</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -157,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/11/Windows07/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/30/Internet07/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -171,7 +171,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/07/11/Windows07/" class="post-title-link" itemprop="url">Windows07</a>
+            <a href="/2023/07/30/Internet07/" class="post-title-link" itemprop="url">Internet07</a>
         </h2>
 
         <div class="post-meta">
@@ -181,14 +181,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-07-11 09:56:34" itemprop="dateCreated datePublished" datetime="2023-07-11T09:56:34+08:00">2023-07-11</time>
+              <time title="Created: 2023-07-30 15:47:36" itemprop="dateCreated datePublished" datetime="2023-07-30T15:47:36+08:00">2023-07-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:44:00" itemprop="dateModified" datetime="2023-08-31T19:44:00+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:46:10" itemprop="dateModified" datetime="2023-08-31T19:46:10+08:00">2023-08-31</time>
               </span>
 
           
@@ -202,10 +202,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>进程通信(IPC)<br>1.通过VM_COPYDATA消息<br>发数据方:<br>(1)定义一个COPYDATASTRUCT结构体用于存放数据<br>(2)通过SendMessage()函数给接收方发送VM_COPYDATA消息,数据作通过WPARAM传递<br>接收方:<br>(1)处理VM_COPYDATA消息<br>事项:使用SendMessage()为了保证临时数据不会析构丢失。</p>
-<p>2.DLL共享<br>通过在DLL中定义一个不会写时拷贝的段实现数据传递。<br>在DLL中定义段:<br>#pragma data_seg(“自定义的段名”)<br>共享的变量(变量需要导出)<br>#pragma data_seg()<br>#pragma comment(linker,”&#x2F;SECTION:自定义的段名,RWS”)</p>
-<p>3.文件映射<br>把文件映射到一段内存，操作映射的内存就是操作文件。</p>
-<p>4.内存共享<br>(1)通过CreateFileMapping()且第一个参数给NULL，最后一个参数给内存的名字，来创建一段物理内存<br>(2)MapViewOfFile()映射<br>(3)其他进程通过OpenFileMapping()获取映射句柄实现共享内存</p>
+          <p>原始套接字<br>创建原始套接字socket(AF_INET,SOCK_RAW,IPPROTO_XXX)  </p>
+<p>网际校验和:在计算校验和时校验和字段的值默认为0，在把计算得到的值赋值的校验和字段</p>
+<p>套接字设置TimeOut<br>1.创建一个fd_set结构体fd<br>2.使用宏FD_ZERO(&amp;fd)初始化fd<br>3.使用宏FD_SET(套接字,&amp;fd),将套接字加入到fd中<br>4.使用结构体timeval设置等待时间<br>5.select(0,&amp;read_fd,&amp;write_fd,&amp;except_fd,&amp;tv)为传入的fd集合设置TimeOut<br>6.使用宏FD_ISSET(套接字,&amp;fd)判断是否超时</p>
+<p>混杂模式(可以监听所有经过的包)<br>1.初始化套接字,监听地址<br>2.WSAIoctl(<br>s(套接字),<br>SIO_RCVALL,<br>&amp;optval(值为1的变量的地址),<br>sizeof(optval)(值为1的变量的大小),<br>nullptr,<br>0,<br>&amp;dwBytesRet,nullptr,nullptr)<br>3.通过不停地recv()拦截包</p>
 
       
     </div>
@@ -225,7 +225,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/09/Windows06/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/29/Internet06/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -239,7 +239,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/07/09/Windows06/" class="post-title-link" itemprop="url">Windows06</a>
+            <a href="/2023/07/29/Internet06/" class="post-title-link" itemprop="url">Internet06</a>
         </h2>
 
         <div class="post-meta">
@@ -249,14 +249,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-07-09 17:20:34" itemprop="dateCreated datePublished" datetime="2023-07-09T17:20:34+08:00">2023-07-09</time>
+              <time title="Created: 2023-07-29 12:53:13" itemprop="dateCreated datePublished" datetime="2023-07-29T12:53:13+08:00">2023-07-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:43:56" itemprop="dateModified" datetime="2023-08-31T19:43:56+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:46:07" itemprop="dateModified" datetime="2023-08-31T19:46:07+08:00">2023-08-31</time>
               </span>
 
           
@@ -270,7 +270,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>1.读取内容:ReadProcessMemory(Pid,RVA,Buffer,read_size,&amp;dwBytes)<br>Pid:被操作进程的ID<br>RVA:被读取的虚拟地址<br>Buffer:接收内容的缓冲区<br>read_size:要读取的大小<br>dwBytes:实际读取的大小<br>2.写入内容:WriteProcessMemory(Pid,RVA,pBuffer,write_size,&amp;dwBytes)<br>Pid:被操作进程的ID<br>RVA:被写入的虚拟地址<br>pBuffer:要写入的缓冲区的地址<br>write_size:要写入的大小<br>dwBytes:实际写入的大小<br>3.基址(不变的地址):代码段 全局地址<br>4.内存分布<br>代码段<br>数据段<br>全局变量(常量和非常量)和静态局部变量<br>栈 地址不固定<br>堆 地址不固定</p>
+          <p>UDP模拟TCP<br>1.区分包分片后的包，反向分片发送。包的最后一片编号为0<br>2.设置一个队列和一个缓冲区搭配使用是为了减少同步问题<br>3.窗口大小为从队列中一次能往缓冲区移动多少个数据的大小<br>4.从接收缓冲区中移动到接收队列时，使用期望接收序号可以保证有序</p>
 
       
     </div>
@@ -290,7 +290,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/09/Windows05/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/Internet04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -304,7 +304,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/07/09/Windows05/" class="post-title-link" itemprop="url">Windows05</a>
+            <a href="/2023/07/26/Internet04/" class="post-title-link" itemprop="url">Internet04</a>
         </h2>
 
         <div class="post-meta">
@@ -314,14 +314,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-07-09 17:20:30" itemprop="dateCreated datePublished" datetime="2023-07-09T17:20:30+08:00">2023-07-09</time>
+              <time title="Created: 2023-07-26 10:33:41" itemprop="dateCreated datePublished" datetime="2023-07-26T10:33:41+08:00">2023-07-26</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:43:49" itemprop="dateModified" datetime="2023-08-31T19:43:49+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:46:05" itemprop="dateModified" datetime="2023-08-31T19:46:05+08:00">2023-08-31</time>
               </span>
 
           
@@ -335,7 +335,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>进程<br>1.进程是应用程序的实例<br>2.进程是抽象的概念，用于管理内存资源和句柄资源<br>3.进程不负责执行代码，线程负责执行代码<br>4.其他的资源以模块为单位来管理，每个模块都有自己独立的资源<br>5.Windows下父子进程关系不紧密<br>6.子进程可以继承父进程的句柄  </p>
+          <p>TCP协议<br>1.三次握手建立连接,四次挥手断开连接<br>三次握手:<br>Client -&gt; Server SYN&#x3D;m<br>Server -&gt; Client SYN&#x3D;n,ACK&#x3D;m+1<br>Client -&gt; Server SYN&#x3D;m+1,ACK&#x3D;n+1<br>四次挥手:<br>Client -&gt; Server FIN&#x3D;j,ACK&#x3D;k<br>Server -&gt; Client ACK&#x3D;j+1  &#x2F;&#x2F;此处断开客户端到服务端的连接，客户端仍可接收服务端的数据<br>Server -&gt; Client FIN&#x3D;k<br>Client -&gt; Server ACK&#x3D;k+1  &#x2F;&#x2F;此处断开服务端到客户端的连接  </p>
+<p>2.TCP通过窗口进行流量控制和提高发送的效率<br>3.TCP在发送时会出现粘包的现象</p>
 
       
     </div>
@@ -355,7 +356,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/06/Windows04/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/26/Internet03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -369,7 +370,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/07/06/Windows04/" class="post-title-link" itemprop="url">Windows04</a>
+            <a href="/2023/07/26/Internet03/" class="post-title-link" itemprop="url">Internet03</a>
         </h2>
 
         <div class="post-meta">
@@ -379,14 +380,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-07-06 19:50:58" itemprop="dateCreated datePublished" datetime="2023-07-06T19:50:58+08:00">2023-07-06</time>
+              <time title="Created: 2023-07-26 10:28:50" itemprop="dateCreated datePublished" datetime="2023-07-26T10:28:50+08:00">2023-07-26</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:43:44" itemprop="dateModified" datetime="2023-08-31T19:43:44+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:46:02" itemprop="dateModified" datetime="2023-08-31T19:46:02+08:00">2023-08-31</time>
               </span>
 
           
@@ -400,10 +401,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>配置文件(config)</p>
-<p>格式:<br>key(键)&#x3D;value(值)</p>
-<p>windows下配置文件:ini文件<br>1.有公有配置文件和私有配置文件<br>2.文件的格式:<br>[Section]<br>key&#x3D;string<br>…</p>
-<p>注册表(系统配置文件)</p>
+          <p>可以把套接字函数封装成类，方便使用</p>
+<p>聊天室逻辑:<br>客户端:<br>1.单独一个线程用于接收消息，根据收到的不同消息做不同的UI设置<br>2.发送消息是一个死循环，但通过特殊命令可以退出<br>3.可以登录和登出</p>
+<p>服务端:<br>1.创建一个用于保存客户端信息的链表<br>2.不停的接收消息，根据接收到的消息做不同的处理</p>
 
       
     </div>
@@ -423,7 +423,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/04/Windows03/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/24/Internet02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -437,7 +437,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/07/04/Windows03/" class="post-title-link" itemprop="url">Windows03</a>
+            <a href="/2023/07/24/Internet02/" class="post-title-link" itemprop="url">Internet02</a>
         </h2>
 
         <div class="post-meta">
@@ -447,14 +447,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-07-04 22:22:46" itemprop="dateCreated datePublished" datetime="2023-07-04T22:22:46+08:00">2023-07-04</time>
+              <time title="Created: 2023-07-24 10:08:25" itemprop="dateCreated datePublished" datetime="2023-07-24T10:08:25+08:00">2023-07-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:43:39" itemprop="dateModified" datetime="2023-08-31T19:43:39+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:45:59" itemprop="dateModified" datetime="2023-08-31T19:45:59+08:00">2023-08-31</time>
               </span>
 
           
@@ -468,10 +468,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>动态库<br>动态库设计:<br>1.在库中定义一个结构体，结构体的成员为库函数的地址，库只导出获取这个结构体的函数<br>2.在苦衷定义一个类工厂，所有的类都继承类工厂，库只导出实例化类工厂的函数<br>3.在库中申请的资源，需要由库来释放  </p>
-<p>动态库使用:<br>1.LoadLibrary()在初次加载库时会申请内存空间，后续通过LoadLibrary()加载同一个库时只会将库的引用计数加一。FreeLibrary()同理，只有引用计数为零时才卸载库，否则就是引用计数减一。<br>2.DllMain():<br>动态库的DllMain()可以用于初始化。<br>DllMain()在库被加载时或被卸载时自动调用。<br>动态库可以递归的加载。<br>DllMain()必须返回，LoadLibrary()才会返回。<br>3.写时拷贝计数:当操作系统发现由进程修改动态库的内存时，会申请一块一模一样的内存给进程用于修改。<br>4.延迟加载技术(解决软件启动速度慢)，只有当函数被调用时才会加载库(用于静态使用的DLL)。  </p>
-<p>DLL劫持<br>前提:程序target.exe和程序运行时使用的动态库Need.dll<br>1.将Need.dll改名为_Need.dll<br>2.制作一个新的Need.dll<br>3.Need.dll通过函数转发实现程序的正常功能<br>函数转发:(#pragma comment(linker,”&#x2F;EXPORT:FUNC&#x3D;_Need.FUNC,@序号”))<br>4.在DllMain()执行自定义的代码  </p>
-<p>*(version.dll)</p>
+          <p>网络通信</p>
+<p>1.创建套接字<br>Socket&#x3D;socket(AF_INET(IPv4),SOCK_DGRAM(报文),IPPROTO_UDP(UDP协议))<br>2.初始化sockaddr结构体,其中地址和端口都需要转为大端序<br>3.绑定端口<br>bind(Socket,&amp;sockaddr_self,sizeof(sockaddr))<br>4.发送&#x2F;接收数据<br>sendto(Socket,Buf,sizeof(Buf),0,sockaddr_to,sizeof(sockaddr_to))<br>recvfrom(Socket,Buf,sizeof(Buf),0,sockaddr_from,sizeof(sockaddr_from))<br>recvfrom函数会阻塞线程。</p>
+<p>在windows中需要调用WSAStartup()函数才可以创建套接字,退出时调用WSACleanup()</p>
 
       
     </div>
@@ -491,7 +490,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/04/Windows02/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/19/Windows13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -505,7 +504,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/07/04/Windows02/" class="post-title-link" itemprop="url">Windows02</a>
+            <a href="/2023/07/19/Windows13/" class="post-title-link" itemprop="url">Windows13</a>
         </h2>
 
         <div class="post-meta">
@@ -515,14 +514,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-07-04 22:22:40" itemprop="dateCreated datePublished" datetime="2023-07-04T22:22:40+08:00">2023-07-04</time>
+              <time title="Created: 2023-07-19 11:28:39" itemprop="dateCreated datePublished" datetime="2023-07-19T11:28:39+08:00">2023-07-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:43:17" itemprop="dateModified" datetime="2023-08-31T19:43:17+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:44:27" itemprop="dateModified" datetime="2023-08-31T19:44:27+08:00">2023-08-31</time>
               </span>
 
           
@@ -536,15 +535,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>动态库<br>1.导出函数。函数默认不导出。在DLL中导出函数通过RVA(相对地址)导出。<br>2.动态库解析工具dumpbin<br>3.连接时需要声明要使用的DLL的导出函数。<br>通常处理方法:<br>在头文件如下定义  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#define _USRDLL</span><br><span class="line">#define LIBFUNC __declspec(dllexport)</span><br><span class="line">#else</span><br><span class="line">#define LIBFUNC __declspec(dllimport)</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-<p>4.导出文件。为了实现不同编译器的兼容性。<br>导出函数：  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LIBRARY</span><br><span class="line">EXPORTS</span><br><span class="line">导出函数名=处理函数名1 @序号 NONAME(实现无名导出)</span><br><span class="line">导出函数名=处理函数名2 PRIVATE(限制为只能动态使用)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>5.EXPORT导出:  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#pragma comment(linker,”/EXPORT:粉碎后的函数名”) 或</span><br><span class="line">#pragma comment(linker,”/EXPORT:导出的名字=粉碎后的函数名”)</span><br></pre></td></tr></table></figure>
-<p>6.类在导出时会将整个类的成员导出<br>7.动态加载DLL  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LoadLibrary(”库的路径\库.dll”)，函数返回库加载到的内存中的地址。</span><br><span class="line">GetProcAddress(模块基址,函数名)/GetProcAddress(模块基址,序号)，函数返回函数指针。</span><br><span class="line">FreeLibrary(HMOUDLE)，释放模块。</span><br></pre></td></tr></table></figure>
-<p>8.KONW Dll概念<br>LoadLibrary(”库名(User32)”)<br>系统通过注册表的表项来决定应该加载的DLL。实现了库名与实际加载的DLL的分离。</p>
+          <p>服务<br>1.程序的特点:长期在后台运行的程序，无需UI，为所有进程提供特定的功能<br>2.服务可以开机后自启动<br>3.服务由服务管理器(SCM)管理，可以通过SCM来安装、开始、停止和删除服务<br>4.安装的服务会在注册表的HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services目录下添加相应的表项<br>5.服务的入口函数为ServiceMain(),可以通过调用StartServiceCtrlDispather()把main转为ServiceMain.<br>6.服务的每次状态转换都存在pending状态，服务只在运行状态工作.</p>
+<p>服务程序基本框架<br>安装:<br>1.获取服务程序路径<br>2.打开SCM管理器<br>3.创建服务<br>开始\停止:<br>1.打开SCM管理器<br>2.打开指定服务<br>3.查询服务状态<br>4.若服务未运行，则运行服务\若服务未停止，则停止服务</p>
 
       
     </div>
@@ -564,7 +556,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/02/Windows01/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/18/Windows12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -578,7 +570,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/07/02/Windows01/" class="post-title-link" itemprop="url">Windows01</a>
+            <a href="/2023/07/18/Windows12/" class="post-title-link" itemprop="url">Windows12</a>
         </h2>
 
         <div class="post-meta">
@@ -588,14 +580,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-07-02 20:47:26" itemprop="dateCreated datePublished" datetime="2023-07-02T20:47:26+08:00">2023-07-02</time>
+              <time title="Created: 2023-07-18 12:49:32" itemprop="dateCreated datePublished" datetime="2023-07-18T12:49:32+08:00">2023-07-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:42:41" itemprop="dateModified" datetime="2023-08-31T19:42:41+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:44:23" itemprop="dateModified" datetime="2023-08-31T19:44:23+08:00">2023-08-31</time>
               </span>
 
           
@@ -609,8 +601,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>静态库<br>1.制作静态库时，一个函数或者一个类实现在一个文件中，因为静态库对代码的抽取按obj文件为单位<br>2.静态库是一种把多个obj文件按一定格式压缩在一起的文件。<br>3.静态库的使用:<br>#pragma comment(lib,”静态库的路径”) 或<br>在vs中直接把库文件添加到项目中(源文件\头文件\外部依赖项) 或<br>编辑项目的属性”配置属性-&gt;连接器-&gt;输入-&gt;附加依赖项”中添加库的路径<br>4.缺点:维护性差<br>5.优点:启动速度快  </p>
-<p>动态库<br>1..dll文件存放着所有的函数代码，但是需要一个.lib文件存放所有的函数名用于加载。<br>2.__declspec(dllexport)声明导出<br>3.动态库搜索dll:<br>当前路径&#x3D;&gt;windows目录&#x3D;&gt;windows\system32(SysWOW64)目录&#x3D;&gt;环境变量</p>
+          <p>消息钩子</p>
+<p>局部钩子<br>1.SetWindowsHookEx(需要监听的消息,消息处理函数,NULL,0)<br>2.在消息处理函数中需要调用CallNextHookEx(),钩子是个链表,且后hook的先调用<br>3.不使用钩子时需要卸载</p>
+<p>全局钩子<br>1.SetWindowsHookEx(需要监听的消息,消息处理函数,动态库的基址,0)<br>2.在消息处理函数中需要调用CallNextHookEx()<br>3.不使用钩子时需要卸载<br>4.Hook时动态库的位数最好和进程一样</p>
+<p>全局钩子本质:操作系统往所有进程内注入给定的动态库<br>Ctrl+d可以设置窗口顺序</p>
 
       
     </div>
@@ -630,7 +624,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/29/CR-MFC10/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/17/Windows11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -644,7 +638,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/29/CR-MFC10/" class="post-title-link" itemprop="url">CR-MFC10</a>
+            <a href="/2023/07/17/Windows11/" class="post-title-link" itemprop="url">Windows11</a>
         </h2>
 
         <div class="post-meta">
@@ -654,14 +648,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-29 12:00:43" itemprop="dateCreated datePublished" datetime="2023-06-29T12:00:43+08:00">2023-06-29</time>
+              <time title="Created: 2023-07-17 10:14:36" itemprop="dateCreated datePublished" datetime="2023-07-17T10:14:36+08:00">2023-07-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:45:28" itemprop="dateModified" datetime="2023-08-31T19:45:28+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:44:18" itemprop="dateModified" datetime="2023-08-31T19:44:18+08:00">2023-08-31</time>
               </span>
 
           
@@ -675,10 +669,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>获取屏幕的分辨率:<br>int nWidth &#x3D; GetSystemMetrics(SM_CXSCREEN);<br>int nHeight &#x3D; GetSystemMetrics(SM_CYSCREEN);</p>
-<p>CString在手动指定长度后会锁存,需要调用CString.ReleaseBuffer()来解锁存。</p>
-<p>模拟键盘:<br>keybd_event()</p>
-<p>可以通过CImage来将bmp存为其他格式的图片</p>
+          <p>同步:<br>同步可能会导致死锁,例如:哲学家吃饭问题</p>
+<p>远程线程注入<br>1.获取目标进程的PID,通常方式为遍历<br>2.获取目标的句柄<br>3.利用VritualAllocEx()函数为目标进程申请内存空间<br>4.写入LoadLibrary()的参数<br>5.计算出目标进程LoadLibrary()的函数地址<br>6.以LoadLibrary()作为线程处理函数为目标进程创建远程线程<br>7.等待线程返回</p>
 
       
     </div>
@@ -698,7 +690,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/29/CR-MFC09/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/15/NJU-PA2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -712,7 +704,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/29/CR-MFC09/" class="post-title-link" itemprop="url">CR-MFC09</a>
+            <a href="/2023/07/15/NJU-PA2/" class="post-title-link" itemprop="url">NJU-PA2</a>
         </h2>
 
         <div class="post-meta">
@@ -722,14 +714,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-29 11:56:42" itemprop="dateCreated datePublished" datetime="2023-06-29T11:56:42+08:00">2023-06-29</time>
+              <time title="Created: 2023-07-15 13:33:38" itemprop="dateCreated datePublished" datetime="2023-07-15T13:33:38+08:00">2023-07-15</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:45:22" itemprop="dateModified" datetime="2023-08-31T19:45:22+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:46:46" itemprop="dateModified" datetime="2023-08-31T19:46:46+08:00">2023-08-31</time>
               </span>
 
           
@@ -743,12 +735,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>视图分割:<br>重写虚函数OnCreateClient()<br>1.CSplitterWnd.CreateStatic(父窗口句柄,行数,列数)<br>&#x2F;  CSplitterWnd.CreateStatic(父窗口句柄,行数,列数,样式,CSplitterWnd.IdFromRowCol(行数,列数))<br>2.CSplitterWnd.CreateView(行号,列号,类型,大小)<br>3.CSplitterWnd.SetRowInfo(行号,最大，最小)<br>4.CSplitterWnd.RecalcLayout()</p>
-<p>分割事项:<br>1.需要为分割后的每个视图指定一个RUNTIME_CLASS。<br>2.需要注释return CFrameWnd::OnCreateClient(lpcs, pContext);</p>
-<p>试图数据共享:<br>1.各个视图重写OnUpdate()虚函数<br>2.文档类实现通知所有视图更新数据的函数  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//通知所有视图更新数据</span><br><span class="line">    POSITION Pos = GetFirstViewPosition();</span><br><span class="line">    while(Pos)</span><br><span class="line">    &#123;</span><br><span class="line">       CView *pView = GetNextView(Pos);</span><br><span class="line">       pView-&gt;OnInitialUpdate();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>Tab Control<br>1.控件绑定<br>2.CTabCtrl.InsertItem(第几个,名称)<br>3.转换tab时需要手动隐藏其他的tab</p>
-<p>CPropertySheet<br>1.CPropertySheet.AddPage();添加切换的页面<br>2.CPropertySheet.SetWizarMode();设为导向模式<br>3.CPropertySheet.DoModal();弹出页面<br>4.CPropertyPage重写OnSetActive()虚函数来更改页面的标题和按钮<br>按钮:CPropertySheet.SetWizardButtons<br>页面标题:CPropertySheet.GetTabControl-&gt;SetItem()<br>最后的页面需要重写OnWizardFinish()</p>
+          <p>record has finish哈桑</p>
 
       
     </div>
@@ -768,7 +755,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/27/CR-MFC08/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/15/Windows10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -782,7 +769,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/06/27/CR-MFC08/" class="post-title-link" itemprop="url">CR-MFC08</a>
+            <a href="/2023/07/15/Windows10/" class="post-title-link" itemprop="url">Windows10</a>
         </h2>
 
         <div class="post-meta">
@@ -792,14 +779,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-06-27 10:34:30" itemprop="dateCreated datePublished" datetime="2023-06-27T10:34:30+08:00">2023-06-27</time>
+              <time title="Created: 2023-07-15 13:10:47" itemprop="dateCreated datePublished" datetime="2023-07-15T13:10:47+08:00">2023-07-15</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:45:19" itemprop="dateModified" datetime="2023-08-31T19:45:19+08:00">2023-08-31</time>
+                <time title="Modified: 2023-08-31 19:44:13" itemprop="dateModified" datetime="2023-08-31T19:44:13+08:00">2023-08-31</time>
               </span>
 
           
@@ -813,9 +800,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>序列化:把对象转为二进制流<br>反序列化:把二进制流转为对象</p>
-<p>MFC中序列化的使用:<br>1.被序列化的对象的基类是CObject<br>2.重写派生类中Serialize()虚函数<br>3.派生类声明中使用宏DECLARE_SERIAL(派生类类名)<br>4.派生类定义一个无参构造<br>5.在派生类实现文件中使用宏IMPLEMENT_SERIAL(派生类类名,基类类名,整型)</p>
-<p>带有序列化的List：CObList</p>
+          <p>线程同步  </p>
+<p>硬件同步:<br>1.原子锁,将对变量的操作从硬件上处理为不可分割。如InterlockedIncrement(&amp;变量地址)  </p>
+<p>软件同步<br>1.临界区,通过设置临界区保证共享变量一次只能有一个线程访问<br>InitializeCriticalSection(&amp;g_cs);&#x2F;&#x2F;初始化临界区<br>EnterCriticalSection(&amp;g_cs);&#x2F;&#x2F;进入临界区<br>…&#x2F;&#x2F;访问资源<br>LeaveCriticalSection(&amp;g_cs);&#x2F;&#x2F;离开临界区<br>DeleteCriticalSection(&amp;g_cs);&#x2F;&#x2F;释放临界区  </p>
+<p>进程同步<br>1.互斥体(没有通知)<br>g_hMutex &#x3D; CreateMutex(NULL, FALSE, NULL);&#x2F;&#x2F;创建互斥体<br>WaitForSingleObject(g_hMutex, INFINITE);&#x2F;&#x2F;等待互斥体<br>ReleaseMutex(g_hMutex);&#x2F;&#x2F;释放互斥体  </p>
+<p>2.信号量(可一个创建多个信号量用于通知)<br>g_hSem &#x3D;  CreateSemaphore(NULL, 1, 1, NULL);&#x2F;&#x2F;创建一个信号量<br>WaitForSingleObject(g_hSem, INFINITE);&#x2F;&#x2F;等待信号量<br>ReleaseSemaphore(g_hSem, 1,  NULL);&#x2F;&#x2F;释放一个信号量  </p>
+<p>3.事件对象(在创建时分为手动和自动,手动用于通知,自动用于同步)<br>g_hEvent &#x3D; CreateEvent(NULL, FALSE, TRUE, NULL);&#x2F;&#x2F;创建一个自动的事件对象<br>WaitForSingleObject(g_hEvent, INFINITE);&#x2F;&#x2F;等待事件对象<br>SetEvent(g_hEvent);&#x2F;&#x2F;设置事件对象有效  </p>
 
       
     </div>
@@ -834,7 +824,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -900,7 +890,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">110</span>
+          <span class="site-state-item-count">122</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
