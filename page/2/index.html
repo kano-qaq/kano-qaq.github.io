@@ -157,6 +157,315 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/08/RE10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/08/RE10/" class="post-title-link" itemprop="url">RE10</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-12-08 19:31:03" itemprop="dateCreated datePublished" datetime="2023-12-08T19:31:03+08:00">2023-12-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-12-10 11:22:46" itemprop="dateModified" datetime="2023-12-10T11:22:46+08:00">2023-12-10</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>结构体<br>1.当结构体作为参数时，存在栈拷贝的行为<br>2.当返回值为结构体时，调用函数时会传入存放返回值的地址再间接赋值</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/08/RE09/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/08/RE09/" class="post-title-link" itemprop="url">RE09</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-08 19:29:35 / Modified: 19:30:50" itemprop="dateCreated datePublished" datetime="2023-12-08T19:29:35+08:00">2023-12-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>变量<br>1.局部变量，在编译期间会重新排序，内存布局与编译器相关<br>2.全局变量，当全局变量通过函数赋值时，通过__initterm&#x2F;__initterm_e赋值<br>3.静态局部变量<br>a.赋值为常量时定义为全局变量<br>b.赋值为变量时通过标志位决定是否赋值，vc6通过bit位实现，vs2019通过tls实现  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/06/RE08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/06/RE08/" class="post-title-link" itemprop="url">RE08</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-06 19:02:01 / Modified: 19:02:24" itemprop="dateCreated datePublished" datetime="2023-12-06T19:02:01+08:00">2023-12-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>函数调用约定<br>1.stdcall，传参从右往左入栈，被调用方平衡栈<br>2.cdecl，传参从右往左入栈，调用方平衡堆栈<br>3.fastcall，传参ecx,edx剩余的从右往左入栈，调用方平衡堆栈<br>4.var_arg(变参)，传参从右往左入栈，va_start()初始化argptr参数指针，va_arg()取参数<br>5.other</p>
+<p>栈寻址方式<br>1.通过esp+imm寻址<br>2.通过ebp+imm寻址，栈回溯通过检索ebp实现的</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/04/RE07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/04/RE07/" class="post-title-link" itemprop="url">RE07</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-12-04 12:41:05 / Modified: 12:41:31" itemprop="dateCreated datePublished" datetime="2023-12-04T12:41:05+08:00">2023-12-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>所有循环最后都会优化为do-while的形式</p>
+<p>数组寻址公式<br>一维数组:数组首地址+index*sizeof(元素大小)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/29/RE06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/29/RE06/" class="post-title-link" itemprop="url">RE06</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-11-29 20:40:54" itemprop="dateCreated datePublished" datetime="2023-11-29T20:40:54+08:00">2023-11-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-12-01 11:32:26" itemprop="dateModified" datetime="2023-12-01T11:32:26+08:00">2023-12-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>switch-case<br>1.分支数&lt;&#x3D;3，通过cmp的引导到相应的case<br>2.分支数&gt;3且分之间间隔较小，通过跳转表<br>3.分支数&gt;3且分之间间隔较大，查索引表后在查跳转表<br>4.分支数&gt;3且分之间间隔很大，平衡二叉树查询</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/29/RE05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -477,311 +786,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/20/MFC%E5%8E%9F%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/11/20/MFC%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">MFC原理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-11-20 21:58:40 / Modified: 22:01:38" itemprop="dateCreated datePublished" datetime="2023-11-20T21:58:40+08:00">2023-11-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>MFC类设计  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CObject  </span><br><span class="line">|---CCmdTarget  </span><br><span class="line">   |---CWinThread  </span><br><span class="line">   |  |---CWinApp  </span><br><span class="line">   |---CDocument  </span><br><span class="line">   |---CWnd  </span><br><span class="line">      |---CFrameWnd  </span><br><span class="line">      |---CDialog  </span><br><span class="line">      |---CView  </span><br></pre></td></tr></table></figure>
-<p>运行时类型识别(RunTime Type Identify)<br>通过使用结构体记录类型信息，结构体间通过指针记录基类和派生类的关系。<br>通过virtual关键字实现动态获取运行时类型。<br>通过函数指针实现类型的实例化</p>
-<p>序列化设计<br>通过全局的构造函数将需要反序列化的类信息插入到链表中</p>
-<p>统一消息处理<br>1.通过修改消息处理函数实现统一消息处理<br>2.通过虚函数实现获取不同的消息映射表<br>3.通过保存基类的消息映射表实现完全的多态<br>4.通过消息处理函数的虚函数，提供用户自行处理的机会</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/08/ShellCode/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/11/08/ShellCode/" class="post-title-link" itemprop="url">ShellCode</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-11-08 21:37:26 / Modified: 21:37:42" itemprop="dateCreated datePublished" datetime="2023-11-08T21:37:26+08:00">2023-11-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Windows下ShellCode利用<br>1.栈溢出<br>2.SEH劫持<br>3.C++的虚函数劫持<br>4.ROP(用于突破DEP限制)  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/31/PE06/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/31/PE06/" class="post-title-link" itemprop="url">PE06</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-31 09:51:55 / Modified: 09:52:29" itemprop="dateCreated datePublished" datetime="2023-10-31T09:51:55+08:00">2023-10-31</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>资源表</p>
-<p>IMAGE_RESOURCE_DIRECTORY:描述目录项的属性，主要描述目录中名字项的数量和序号项的数量<br>IMAGE_RESOURCE_DIRECTORY_ENTRY:描述目录下项的属性<br>union1的最高位:1表示是名字,0表示是序号<br>union2的最高位:1表示是目录,0表示是文件<br>IMAGE_RESOURCE_DATA_ENTRY:描述文件项的属性，其中偏移为节内偏移</p>
-<p>图标的提取<br>1.从图标组目录中提取出文件头和图标的序号<br>2.在图标目录中根据序号提取出像素信息</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/31/PE05/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/31/PE05/" class="post-title-link" itemprop="url">PE05</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-31 09:48:52 / Modified: 09:51:11" itemprop="dateCreated datePublished" datetime="2023-10-31T09:48:52+08:00">2023-10-31</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>TLS(线程局部存储)，可以作为线程内的全局变量<br>TLS可用于反调试</p>
-<p>使用TLS<br>申请空间:nIndex&#x3D;TlsAlloc()<br>设置值:TlsSetValue(nIndex,Value)<br>获取值:TlsGetValue(nIndex)</p>
-<p>主线程使用TLS<br>__declspec(thread) 变量声明</p>
-<p>对转发的处理:<br>递归调用GetProcAddr，若命中在导出表范围中则为转发</p>
-<p>数据目录大小有用的表:导入表，重定位表</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/30/PE04/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/30/PE04/" class="post-title-link" itemprop="url">PE04</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-30 11:13:03 / Modified: 11:15:57" itemprop="dateCreated datePublished" datetime="2023-10-30T11:13:03+08:00">2023-10-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>重定位表:<br>使用结构体IMAGE_BASE_RELOCATION来描述<br>IMAGE_BASE_RELOCATION.VirtualAddress:描述分页信息<br>IMAGE_BASE_RELOCATION.SizeOfBlock:描述该结构体大小<br>使用一个柔性数组存储分页中的偏移信息  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -851,14 +855,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">127</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -885,7 +889,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

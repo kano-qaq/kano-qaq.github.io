@@ -157,6 +157,349 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/06/Windows04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/06/Windows04/" class="post-title-link" itemprop="url">Windows04</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-06 19:50:58" itemprop="dateCreated datePublished" datetime="2023-07-06T19:50:58+08:00">2023-07-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:43:44" itemprop="dateModified" datetime="2023-08-31T19:43:44+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>配置文件(config)</p>
+<p>格式:<br>key(键)&#x3D;value(值)</p>
+<p>windows下配置文件:ini文件<br>1.有公有配置文件和私有配置文件<br>2.文件的格式:<br>[Section]<br>key&#x3D;string<br>…</p>
+<p>注册表(系统配置文件)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/04/Windows03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/04/Windows03/" class="post-title-link" itemprop="url">Windows03</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-04 22:22:46" itemprop="dateCreated datePublished" datetime="2023-07-04T22:22:46+08:00">2023-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:43:39" itemprop="dateModified" datetime="2023-08-31T19:43:39+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>动态库<br>动态库设计:<br>1.在库中定义一个结构体，结构体的成员为库函数的地址，库只导出获取这个结构体的函数<br>2.在苦衷定义一个类工厂，所有的类都继承类工厂，库只导出实例化类工厂的函数<br>3.在库中申请的资源，需要由库来释放  </p>
+<p>动态库使用:<br>1.LoadLibrary()在初次加载库时会申请内存空间，后续通过LoadLibrary()加载同一个库时只会将库的引用计数加一。FreeLibrary()同理，只有引用计数为零时才卸载库，否则就是引用计数减一。<br>2.DllMain():<br>动态库的DllMain()可以用于初始化。<br>DllMain()在库被加载时或被卸载时自动调用。<br>动态库可以递归的加载。<br>DllMain()必须返回，LoadLibrary()才会返回。<br>3.写时拷贝计数:当操作系统发现由进程修改动态库的内存时，会申请一块一模一样的内存给进程用于修改。<br>4.延迟加载技术(解决软件启动速度慢)，只有当函数被调用时才会加载库(用于静态使用的DLL)。  </p>
+<p>DLL劫持<br>前提:程序target.exe和程序运行时使用的动态库Need.dll<br>1.将Need.dll改名为_Need.dll<br>2.制作一个新的Need.dll<br>3.Need.dll通过函数转发实现程序的正常功能<br>函数转发:(#pragma comment(linker,”&#x2F;EXPORT:FUNC&#x3D;_Need.FUNC,@序号”))<br>4.在DllMain()执行自定义的代码  </p>
+<p>*(version.dll)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/04/Windows02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/04/Windows02/" class="post-title-link" itemprop="url">Windows02</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-04 22:22:40" itemprop="dateCreated datePublished" datetime="2023-07-04T22:22:40+08:00">2023-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:43:17" itemprop="dateModified" datetime="2023-08-31T19:43:17+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>动态库<br>1.导出函数。函数默认不导出。在DLL中导出函数通过RVA(相对地址)导出。<br>2.动态库解析工具dumpbin<br>3.连接时需要声明要使用的DLL的导出函数。<br>通常处理方法:<br>在头文件如下定义  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#define _USRDLL</span><br><span class="line">#define LIBFUNC __declspec(dllexport)</span><br><span class="line">#else</span><br><span class="line">#define LIBFUNC __declspec(dllimport)</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<p>4.导出文件。为了实现不同编译器的兼容性。<br>导出函数：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LIBRARY</span><br><span class="line">EXPORTS</span><br><span class="line">导出函数名=处理函数名1 @序号 NONAME(实现无名导出)</span><br><span class="line">导出函数名=处理函数名2 PRIVATE(限制为只能动态使用)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>5.EXPORT导出:  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#pragma comment(linker,”/EXPORT:粉碎后的函数名”) 或</span><br><span class="line">#pragma comment(linker,”/EXPORT:导出的名字=粉碎后的函数名”)</span><br></pre></td></tr></table></figure>
+<p>6.类在导出时会将整个类的成员导出<br>7.动态加载DLL  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LoadLibrary(”库的路径\库.dll”)，函数返回库加载到的内存中的地址。</span><br><span class="line">GetProcAddress(模块基址,函数名)/GetProcAddress(模块基址,序号)，函数返回函数指针。</span><br><span class="line">FreeLibrary(HMOUDLE)，释放模块。</span><br></pre></td></tr></table></figure>
+<p>8.KONW Dll概念<br>LoadLibrary(”库名(User32)”)<br>系统通过注册表的表项来决定应该加载的DLL。实现了库名与实际加载的DLL的分离。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/02/Windows01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/02/Windows01/" class="post-title-link" itemprop="url">Windows01</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-02 20:47:26" itemprop="dateCreated datePublished" datetime="2023-07-02T20:47:26+08:00">2023-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:42:41" itemprop="dateModified" datetime="2023-08-31T19:42:41+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>静态库<br>1.制作静态库时，一个函数或者一个类实现在一个文件中，因为静态库对代码的抽取按obj文件为单位<br>2.静态库是一种把多个obj文件按一定格式压缩在一起的文件。<br>3.静态库的使用:<br>#pragma comment(lib,”静态库的路径”) 或<br>在vs中直接把库文件添加到项目中(源文件\头文件\外部依赖项) 或<br>编辑项目的属性”配置属性-&gt;连接器-&gt;输入-&gt;附加依赖项”中添加库的路径<br>4.缺点:维护性差<br>5.优点:启动速度快  </p>
+<p>动态库<br>1..dll文件存放着所有的函数代码，但是需要一个.lib文件存放所有的函数名用于加载。<br>2.__declspec(dllexport)声明导出<br>3.动态库搜索dll:<br>当前路径&#x3D;&gt;windows目录&#x3D;&gt;windows\system32(SysWOW64)目录&#x3D;&gt;环境变量</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/29/CR-MFC10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/29/CR-MFC10/" class="post-title-link" itemprop="url">CR-MFC10</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-06-29 12:00:43" itemprop="dateCreated datePublished" datetime="2023-06-29T12:00:43+08:00">2023-06-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:45:28" itemprop="dateModified" datetime="2023-08-31T19:45:28+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>获取屏幕的分辨率:<br>int nWidth &#x3D; GetSystemMetrics(SM_CXSCREEN);<br>int nHeight &#x3D; GetSystemMetrics(SM_CYSCREEN);</p>
+<p>CString在手动指定长度后会锁存,需要调用CString.ReleaseBuffer()来解锁存。</p>
+<p>模拟键盘:<br>keybd_event()</p>
+<p>可以通过CImage来将bmp存为其他格式的图片</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/29/CR-MFC09/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -494,344 +837,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/19/CR-MFC03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/19/CR-MFC03/" class="post-title-link" itemprop="url">CR-MFC03</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-19 10:36:16" itemprop="dateCreated datePublished" datetime="2023-06-19T10:36:16+08:00">2023-06-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:45:04" itemprop="dateModified" datetime="2023-08-31T19:45:04+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>查找文件CFileFinder<br>列表试图CListControl<br>树试图CTreeControl  </p>
-<p>虚函数的使用<br>PreInitDialog()在对话框初始化控件前调用</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/16/CR-MFC02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/16/CR-MFC02/" class="post-title-link" itemprop="url">CR-MFC02</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-16 22:29:55" itemprop="dateCreated datePublished" datetime="2023-06-16T22:29:55+08:00">2023-06-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:45:00" itemprop="dateModified" datetime="2023-08-31T19:45:00+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>IDOK，点击后会销毁窗口。</p>
-<p>数据绑定设(ddx)<br>Updata() 参数TRUE&#x2F;FALSE决定操作的意义。</p>
-<p>子类化设计<br>动态子类化:运行点击后才子类化，运行后可以修改<br>静态子类化:运行时直接子类化，运行后不可修改</p>
-<p>消息反射:<br>控件的发送给父窗口的控件消息，父窗口收到消息后，由父窗口发送回控件。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/15/CR-MFC01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/15/CR-MFC01/" class="post-title-link" itemprop="url">CR-MFC01</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-15 13:13:51" itemprop="dateCreated datePublished" datetime="2023-06-15T13:13:51+08:00">2023-06-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:44:56" itemprop="dateModified" datetime="2023-08-31T19:44:56+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>可以通过类向导，实现控件对各种消息的响应。</p>
-<p>获取对话框中控件的对应句柄<br>控件类型指针&#x3D;GetDlgItem(“控件的ID”);</p>
-<p>可以通过使用静态库方便加载调试信息。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/13/CR-SDK06/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/13/CR-SDK06/" class="post-title-link" itemprop="url">CR-SDK06</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-13 19:32:47" itemprop="dateCreated datePublished" datetime="2023-06-13T19:32:47+08:00">2023-06-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:42:23" itemprop="dateModified" datetime="2023-08-31T19:42:23+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>通过资源导入，可以实现窗口界面的快速生成。<br>如菜单，快捷键，对话框等。</p>
-<p>快捷键:<br>1.加载快捷键资源。HACCEL hAccel &#x3D; LoadAccelerators()<br>2.通过TranslateAccelerator()函数处理快捷键。</p>
-<p>模态对话框<br>创建模态对话框<br>DialogBox(g_hInstance, (LPSTR)IDD_DIALOG1, hwnd, DialogProc)<br>模态对话框有独立的消息队列。</p>
-<p>创建肥模态对话框<br>HWND hDlg &#x3D; CreateDialog(g_hInstance, (LPSTR)IDD_DIALOG3, NULL, DialogProc);<br>ShowWindow(hDlg, SW_SHOWNORMAL);<br>非模态对话框共享消息队列。</p>
-<p>对话框也存在预定义的样式</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/13/CR-SDK05/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/13/CR-SDK05/" class="post-title-link" itemprop="url">CR-SDK05</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-13 19:31:19" itemprop="dateCreated datePublished" datetime="2023-06-13T19:31:19+08:00">2023-06-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:42:10" itemprop="dateModified" datetime="2023-08-31T19:42:10+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>控件:已经注册好了的窗口。<br>系统通过WM_COMMAND消息来向父窗口发送消息。</p>
-<p>控件拥有控件内部的消息。<br>对控件消息的响应通过响应WM_COMMAND消息。<br>控件内部的消息通过HIWORD(wParam)来提取出。<br>控件的id号在CreateWindow()时的hMenu参数给出。<br>对控件的操作通过发送控件拥有的消息来控制。<br>控件的操作只能用sendmessage()操作。</p>
-<p>消息类型:<br>通告消息(对控件的操作)<br>控件消息(控件发送的消息)<br>通用消息(所有控件都有的)</p>
-<p>在listview控件中<br>insert后的同一行只能用set来设置值</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -901,14 +906,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">127</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -935,7 +940,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
