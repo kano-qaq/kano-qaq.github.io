@@ -157,6 +157,330 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/29/RE05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/29/RE05/" class="post-title-link" itemprop="url">RE05</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-29 20:38:19 / Modified: 20:40:42" itemprop="dateCreated datePublished" datetime="2023-11-29T20:38:19+08:00">2023-11-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>分支和条件运算符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">1.if(a==b) &#123; do a==b &#125;</span><br><span class="line">cmp    a,b</span><br><span class="line">jnz    lable_not_do</span><br><span class="line">...(do a==b)</span><br><span class="line">lable_not_do:</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">2.if(a==b) &#123;do a==b&#125; else &#123;do a!=b&#125;</span><br><span class="line">cmp    a,b</span><br><span class="line">jnz    lable_not_do</span><br><span class="line">...(do a==b)</span><br><span class="line">jmp    lable_end</span><br><span class="line">lable_not_do:</span><br><span class="line">...(do a!=b)</span><br><span class="line">lable_end:</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&amp;&amp;</span><br><span class="line">if(a!=b &amp;&amp; a!=c) &#123;do if_do&#125;</span><br><span class="line">cmp    a,b</span><br><span class="line">jz    lable_not_do</span><br><span class="line">cmp    a,c</span><br><span class="line">jz    lable_not_do</span><br><span class="line">...(do if_do)</span><br><span class="line">lable_not_do:</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">||</span><br><span class="line">if(a!=b || a!=c) &#123;do if_do&#125;</span><br><span class="line">cmp    a,b</span><br><span class="line">jnz    lable_if_do</span><br><span class="line">cmp    a,c</span><br><span class="line">jz    lable_not_do</span><br><span class="line">lable_if_do:</span><br><span class="line">...(do if_do)</span><br><span class="line">lable_not_do:</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/29/RE04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/29/RE04/" class="post-title-link" itemprop="url">RE04</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-29 20:38:12 / Modified: 20:39:27" itemprop="dateCreated datePublished" datetime="2023-11-29T20:38:12+08:00">2023-11-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>浮点运算<br>x87:<br>寄存器:ST0~ST7，且为栈结构  </p>
+<p>MMX:<br>寄存器:mm0~mm7<br>指令支持整型的并行运算</p>
+<p>SSE:<br>寄存器:xmm0~xmm7<br>版本对应的头文件<br>xmmintrin.h -&gt; SSE<br>emmintrin.h -&gt; SSE2<br>pmmintrin.h -&gt; SSE3<br>smmintrin.h -&gt; SSE4  </p>
+<p>AVX:<br>寄存器:ymm0~ymm7</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/27/RE03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/27/RE03/" class="post-title-link" itemprop="url">RE03</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-11-27 13:29:23 / Modified: 13:33:22" itemprop="dateCreated datePublished" datetime="2023-11-27T13:29:23+08:00">2023-11-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>条件表达式<br>当分支为常量时可以优化<br>原型: argc &#x3D;&#x3D; 0 ? 0:-1;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">mov    reg,argc</span><br><span class="line">neg    reg</span><br><span class="line">sbb    reg,reg</span><br><span class="line"></span><br><span class="line">argc == 0? 6:16;</span><br><span class="line">mov    reg,argc</span><br><span class="line">neg    reg</span><br><span class="line">sbb    reg,reg</span><br><span class="line">and    reg,(16-6)</span><br><span class="line">add    reg,6</span><br><span class="line"></span><br><span class="line">argc == 0? 26:16;</span><br><span class="line">mov    reg,argc</span><br><span class="line">neg    reg</span><br><span class="line">sbb    reg,reg</span><br><span class="line">and    reg,(26-16)</span><br><span class="line">add    reg,16</span><br><span class="line">argc &lt; 45?26:16;</span><br><span class="line">mov    edx,argc</span><br><span class="line">xor    eax,eax</span><br><span class="line">cmp    edx,45</span><br><span class="line">setge  al</span><br><span class="line">dec    eax</span><br><span class="line">and    eax,(26-16)</span><br><span class="line">add    eax,16</span><br><span class="line"></span><br><span class="line">(vs2019的优化)</span><br><span class="line">argc &lt; 45?26:16;</span><br><span class="line">mov    eax,26</span><br><span class="line">mov    ebx,16</span><br><span class="line">cmp    argc,45</span><br><span class="line">cmovl  eax,ebx</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/23/RE02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/23/RE02/" class="post-title-link" itemprop="url">RE02</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-11-23 14:20:12" itemprop="dateCreated datePublished" datetime="2023-11-23T14:20:12+08:00">2023-11-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-11-27 13:31:54" itemprop="dateModified" datetime="2023-11-27T13:31:54+08:00">2023-11-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>取模运算<br>无优化:<br>使用div或idiv，使用edx作为结果<br>优化(A mod 2^n):<br>A为无符号数:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">and    A,2^n-1</span><br></pre></td></tr></table></figure>
+<p>A为有符号数:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">and    A,(0x80000000|2^n-1)</span><br><span class="line">jns    $F</span><br><span class="line">dec    A</span><br><span class="line">or    A,(0xFFFFFFFF-(2^n-1))</span><br><span class="line">inc    A</span><br><span class="line">其中dec/inc是处理余数为0的情况</span><br></pre></td></tr></table></figure>
+
+<p>(vc6中模数为负的优化)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cdq</span><br><span class="line">xor    A,edx</span><br><span class="line">sub    A,edx</span><br><span class="line">and    A,2^n-1</span><br><span class="line">xor    A,edx</span><br><span class="line">sub    A,edx</span><br></pre></td></tr></table></figure>
+<p>vs2019中优化A mod const:<br>a-qb</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/20/RE01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/11/20/RE01/" class="post-title-link" itemprop="url">RE01</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-11-20 22:05:34" itemprop="dateCreated datePublished" datetime="2023-11-20T22:05:34+08:00">2023-11-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-02-18 19:24:10" itemprop="dateModified" datetime="2024-02-18T19:24:10+08:00">2024-02-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>(RE01~RE03)<br>签名文件制作:<br>1.link -lib &#x2F;list 目标.lib 显示目标库中的所有obj<br>2.link -lib &#x2F;extract:object1.obj 目标.lib 提取出其中一个obj<br>3.pcf object1.obj 将.obj文件转为.pat文件<br>4.sigmake -n”注释” object1.pat object1.sig 制作签名文件</p>
+<p>只有单操作数乘法扩展位长。<br>除法只有除数不为变量时可以优化。</p>
+<p>无符号作被除数:<br>除数为2^n时:<br>除数大于0:shr 被除数,n<br>除数小于0:div 除数</p>
+<p>除数不为2^n时:<br>除数的10进制表达式&#x3D;floor(2^(32+右移位数)&#x2F;magic_number)<br>将除数的10进制表达式转为16进制判断正负<br>(乘减移加移的真实magic_number &#x3D; 1 0000 0000h + 反汇编显示的magic_number)</p>
+<p>vc6中:<br>unsigned int &#x2F; -5 和 unsigned int &#x2F; 4294967291 汇编代码一样<br>vs2019中:<br>表达式unsigned int &#x2F; 4294967291的4294967291会默认转为long long类型，导致引入大数乘法。<br>unsigned int &#x2F; -5 和unsigned int &#x2F; 4294967291i32 的汇编代码一样</p>
+<p>有符号作被除数:<br>除数为2^n时:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">除数大于0:</span><br><span class="line">mov    eax,A</span><br><span class="line">cdq</span><br><span class="line">and    edx,2^n-1</span><br><span class="line">add    eax,edx</span><br><span class="line">sar    eax,n</span><br><span class="line">除数=2^n</span><br><span class="line"></span><br><span class="line">除数小于0:</span><br><span class="line">mov    eax,A</span><br><span class="line">cdq</span><br><span class="line">and    edx,2^n-1</span><br><span class="line">add    eax,edx</span><br><span class="line">sar    eax,n</span><br><span class="line">neg    eax</span><br><span class="line">除数=-(2^n)</span><br></pre></td></tr></table></figure>
+<p>除数不为2^n时:<br>magic_number&lt;0,没有任何调整代码 &#x3D;&gt; 除数为负(magic_number为求补后的)<br>magic_number&lt;0,有加调整 &#x3D;&gt; 除数为正<br>magic_number&gt;0,有减调整 &#x3D;&gt; 除数为负(magic_number为求补后的)<br>magic_number &gt; 0,没有任何调整代码 &#x3D;&gt; 除数为正</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/20/MFC%E5%8E%9F%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -458,311 +782,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/22/PE03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/22/PE03/" class="post-title-link" itemprop="url">PE03</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-22 21:08:30 / Modified: 21:09:52" itemprop="dateCreated datePublished" datetime="2023-10-22T21:08:30+08:00">2023-10-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>导出表:<br>1.按照函数序号寻址:<br>序号减去Base序号作为下标，用该下标在AddressOfFunctions表中取出地址<br>2.按照函数名称寻址:<br>在AddressOfNames表中逐一和输入的名字进行比较，若有匹配的名字，则以匹配的下标在AddressOfNameOrdinals表中取出值，用取出的值作为AddressOfFunctions表的下标取出地址</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/17/PE02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/17/PE02/" class="post-title-link" itemprop="url">PE02</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-17 00:16:19 / Modified: 00:17:38" itemprop="dateCreated datePublished" datetime="2023-10-17T00:16:19+08:00">2023-10-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>导入信息表</p>
-<p>系统处理流程<br>1.检查IAT表的目标表项是否为null，为空则该条目无效，处理下一个条目<br>2.LoadLibrary并检查<br>3.检查函数信息表是否为null，为空则分析IAT表<br>4.把函数指针写入到IAT对应的表项  </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/17/PE01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/17/PE01/" class="post-title-link" itemprop="url">PE01</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-17 00:16:12 / Modified: 00:17:13" itemprop="dateCreated datePublished" datetime="2023-10-17T00:16:12+08:00">2023-10-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>PE格式</p>
-<p>PE格式是用于存储程序创建时所需要的信息。</p>
-<p>有以下结构体定义<br>IMAGE_DOS_HEADER<br>IMAGE_NT_HEADERS<br>IMAGE_FILE_HEADER<br>IMAGE_OPTIONAL_HEADER<br>IMAGE_SECTION_HEADER  </p>
-<p>添加section<br>a:<br>1.在Section Headers添加一个合理的IMAGE_SECTION_HEADER信息。<br>2.在文件中添加相应的数据<br>3.修改IMAGE_FILE_HEADER中的NumbersOfSections字段<br>4.修改IMAGE_OPTIONAL_HEADER中的SizeOfImage字段<br>b:<br>1.修改最后一个Section Headers中的文件大小<br>2.在文件中添加相应数据<br>c:(等价于c语言中的未初始化section)<br>1.在Section Headers添加一个Virtual Size位为0的合理的IMAGE_SECTION_HEADER信息。<br>2.不需要在文件中添加数据<br>d:<br>1.增加最后一个Section Headers中的Virtual Size</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/13/DEBUG05/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/13/DEBUG05/" class="post-title-link" itemprop="url">DEBUG05</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-13 19:16:14 / Modified: 19:16:55" itemprop="dateCreated datePublished" datetime="2023-10-13T19:16:14+08:00">2023-10-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>调试器内存断点  </p>
-<p>实现:<br>通过修改地址的内存属性，实现访问异常。再通过异常查表处理是否属于内存断点。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/11/DEBUG04/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/11/DEBUG04/" class="post-title-link" itemprop="url">DEBUG04</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-10-11 12:01:55 / Modified: 12:02:54" itemprop="dateCreated datePublished" datetime="2023-10-11T12:01:55+08:00">2023-10-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>调试器硬件断点  </p>
-<p>实现:<br>通过设置调试寄存器的值来实现硬件断点<br>DebugReg7:通过设置相应的位来使得硬件断点生效和定义断点的类型，大小<br>DebugReg6:通过检测相应的位来获取触发的硬件断点是哪个<br>DebugReg0~3:硬件断点的地址</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -828,14 +851,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">127</span>
+          <span class="site-state-item-count">132</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

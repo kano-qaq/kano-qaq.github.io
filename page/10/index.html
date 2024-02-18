@@ -157,6 +157,347 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/29/CR-MFC09/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/29/CR-MFC09/" class="post-title-link" itemprop="url">CR-MFC09</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-06-29 11:56:42" itemprop="dateCreated datePublished" datetime="2023-06-29T11:56:42+08:00">2023-06-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:45:22" itemprop="dateModified" datetime="2023-08-31T19:45:22+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>视图分割:<br>重写虚函数OnCreateClient()<br>1.CSplitterWnd.CreateStatic(父窗口句柄,行数,列数)<br>&#x2F;  CSplitterWnd.CreateStatic(父窗口句柄,行数,列数,样式,CSplitterWnd.IdFromRowCol(行数,列数))<br>2.CSplitterWnd.CreateView(行号,列号,类型,大小)<br>3.CSplitterWnd.SetRowInfo(行号,最大，最小)<br>4.CSplitterWnd.RecalcLayout()</p>
+<p>分割事项:<br>1.需要为分割后的每个视图指定一个RUNTIME_CLASS。<br>2.需要注释return CFrameWnd::OnCreateClient(lpcs, pContext);</p>
+<p>试图数据共享:<br>1.各个视图重写OnUpdate()虚函数<br>2.文档类实现通知所有视图更新数据的函数  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//通知所有视图更新数据</span><br><span class="line">    POSITION Pos = GetFirstViewPosition();</span><br><span class="line">    while(Pos)</span><br><span class="line">    &#123;</span><br><span class="line">       CView *pView = GetNextView(Pos);</span><br><span class="line">       pView-&gt;OnInitialUpdate();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>Tab Control<br>1.控件绑定<br>2.CTabCtrl.InsertItem(第几个,名称)<br>3.转换tab时需要手动隐藏其他的tab</p>
+<p>CPropertySheet<br>1.CPropertySheet.AddPage();添加切换的页面<br>2.CPropertySheet.SetWizarMode();设为导向模式<br>3.CPropertySheet.DoModal();弹出页面<br>4.CPropertyPage重写OnSetActive()虚函数来更改页面的标题和按钮<br>按钮:CPropertySheet.SetWizardButtons<br>页面标题:CPropertySheet.GetTabControl-&gt;SetItem()<br>最后的页面需要重写OnWizardFinish()</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/27/CR-MFC08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/27/CR-MFC08/" class="post-title-link" itemprop="url">CR-MFC08</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-06-27 10:34:30" itemprop="dateCreated datePublished" datetime="2023-06-27T10:34:30+08:00">2023-06-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:45:19" itemprop="dateModified" datetime="2023-08-31T19:45:19+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>序列化:把对象转为二进制流<br>反序列化:把二进制流转为对象</p>
+<p>MFC中序列化的使用:<br>1.被序列化的对象的基类是CObject<br>2.重写派生类中Serialize()虚函数<br>3.派生类声明中使用宏DECLARE_SERIAL(派生类类名)<br>4.派生类定义一个无参构造<br>5.在派生类实现文件中使用宏IMPLEMENT_SERIAL(派生类类名,基类类名,整型)</p>
+<p>带有序列化的List：CObList</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/26/CR-MFC07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/26/CR-MFC07/" class="post-title-link" itemprop="url">CR-MFC07</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-06-26 11:48:01" itemprop="dateCreated datePublished" datetime="2023-06-26T11:48:01+08:00">2023-06-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:45:14" itemprop="dateModified" datetime="2023-08-31T19:45:14+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>撤销和重做:<br>1.需要两个链表，m_UndoList和m_RedoList<br>2.每做一个操作就需要把该操作添加到m_UndoList链表尾部。<br>3.撤销时从m_UndoList链表尾部的元素移动到m_RedoList链表尾部<br>4.重做时从m_RedoList链表尾部的元素移动到m_UndoList链表尾部  </p>
+<p>命令设计模式:<br>1.把用户可以执行的每个操作都抽象为一条命令<br>2.拥有一个命令管理器，命令管理器负责添加命令到撤销链表，执行撤销操作和重做操作<br>3.每一条命令都有它正向操作和反向操作  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class ICommand</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">  virtual int Exce() = 0;</span><br><span class="line">  virtual int UnExce() = 0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class AddCommand :public ICommand</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">  AddCommand(CAD::IShape* pObj, CList&lt;CAD::IShape*&gt; *pShapeList)</span><br><span class="line">  &#123;</span><br><span class="line">    m_pObject = pObj;</span><br><span class="line">    m_pShapeList = pShapeList;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  virtual int Exce()</span><br><span class="line">  &#123;</span><br><span class="line">    //正向操作</span><br><span class="line">    return 0;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  virtual int UnExce()</span><br><span class="line">  &#123;</span><br><span class="line">    //反向操作</span><br><span class="line">    return 0;</span><br><span class="line">  &#125;</span><br><span class="line">private:</span><br><span class="line">  CAD::IShape* m_pObject;</span><br><span class="line">  CList&lt;CAD::IShape*&gt; *m_pShapeList;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>命令管理器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">class CCmdMgr</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">  CCmdMgr()</span><br><span class="line">  &#123;</span><br><span class="line">  &#125;</span><br><span class="line">  ~CCmdMgr()</span><br><span class="line">  &#123;</span><br><span class="line">    POSITION pos = m_UndoList.GetHeadPosition();</span><br><span class="line">    while (pos)</span><br><span class="line">    &#123;</span><br><span class="line">      CAD::ICommand* pCmd = m_UndoList.GetNext(pos);</span><br><span class="line">      delete pCmd;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    pos = m_RedoList.GetHeadPosition();</span><br><span class="line">    while (pos)</span><br><span class="line">    &#123;</span><br><span class="line">      CAD::ICommand* pCmd = m_RedoList.GetNext(pos);</span><br><span class="line">      delete pCmd;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  int AddCommand(ICommand* pCmd)</span><br><span class="line">  &#123;</span><br><span class="line">    m_UndoList.AddTail(pCmd);</span><br><span class="line">    return 0;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  int Undo()</span><br><span class="line">  &#123;</span><br><span class="line">    if (m_UndoList.IsEmpty())</span><br><span class="line">      return -1;</span><br><span class="line"></span><br><span class="line">    ICommand* pCmd = m_UndoList.GetTail();</span><br><span class="line">    int Result = pCmd-&gt;UnExce();</span><br><span class="line">    m_UndoList.RemoveTail();</span><br><span class="line">    m_RedoList.AddTail(pCmd);</span><br><span class="line">    return Result;</span><br><span class="line">  &#125;</span><br><span class="line">  int Redo()</span><br><span class="line">  &#123;</span><br><span class="line">    if (m_RedoList.IsEmpty())</span><br><span class="line">      return -1;</span><br><span class="line"></span><br><span class="line">    ICommand* pCmd = m_RedoList.GetTail();</span><br><span class="line">    int Result = pCmd-&gt;Exce();</span><br><span class="line">    m_RedoList.RemoveTail();</span><br><span class="line">    m_UndoList.AddTail(pCmd);</span><br><span class="line">    return Result;</span><br><span class="line">  &#125;</span><br><span class="line">private:</span><br><span class="line">  CList&lt;ICommand*&gt; m_UndoList;</span><br><span class="line">  CList&lt;ICommand*&gt; m_RedoList;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/26/CR-MFC06/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/26/CR-MFC06/" class="post-title-link" itemprop="url">CR-MFC06</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-06-26 11:47:56" itemprop="dateCreated datePublished" datetime="2023-06-26T11:47:56+08:00">2023-06-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:45:11" itemprop="dateModified" datetime="2023-08-31T19:45:11+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>通过实现一个类工厂，实现更好的维护性。</p>
+<p>在基类中添加以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class ICadFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">  virtual IShape* CreateObj() = 0;</span><br><span class="line">&#125;;</span><br><span class="line">template&lt;typename TYPE&gt;</span><br><span class="line">class CFactory :public ICadFactory</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">  virtual IShape* CreateObj()</span><br><span class="line">  &#123;</span><br><span class="line">    return new TYPE();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>实例化时<br>m_pFactory &#x3D; new CAD::CFactory&lt;派生类&gt;();</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/21/CR-MFC05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kkano">
+      <meta itemprop="description" content="Record my life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkano">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/06/21/CR-MFC05/" class="post-title-link" itemprop="url">CR-MFC05</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-06-21 12:37:18" itemprop="dateCreated datePublished" datetime="2023-06-21T12:37:18+08:00">2023-06-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-31 19:45:07" itemprop="dateModified" datetime="2023-08-31T19:45:07+08:00">2023-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>MFC拥有的dc:<br>CDC<br>CClient dc<br>CpaintDc<br>CWindowDc</p>
+<p>setcapture()捕获窗口外的消息</p>
+<p>双缓冲技术<br>解决屏闪问题  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">CCADView::OnDraw</span><span class="params">(CDC* pDC)</span></span><br><span class="line">&#123; </span><br><span class="line">  CRect rc;</span><br><span class="line">  GetClientRect(rc);</span><br><span class="line">  <span class="comment">//创建兼容dc</span></span><br><span class="line">  CDC MemDC;</span><br><span class="line">  MemDC.CreateCompatibleDC(pDC);</span><br><span class="line">  <span class="comment">//创建兼容位图</span></span><br><span class="line">  CBitmap bitmap;</span><br><span class="line">  bitmap.CreateCompatibleBitmap(pDC, rc.Width(), rc.Height());</span><br><span class="line">  MemDC.SelectObject(bitmap);</span><br><span class="line">  CDC *pCurDC = &amp;MemDC;</span><br><span class="line">  <span class="comment">//清除背景</span></span><br><span class="line">  pCurDC-&gt;FillRect(rc, &amp;m_bkBrush);</span><br><span class="line">  <span class="comment">//绘制图形</span></span><br><span class="line">  POSITION pos = m_ShapeList.GetHeadPosition();</span><br><span class="line">  <span class="keyword">while</span>(pos)</span><br><span class="line">  &#123;</span><br><span class="line">    CAD::IShape *p = m_ShapeList.GetNext(pos);</span><br><span class="line">    p-&gt;OnDraw(pCurDC);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//绘制当前图形</span></span><br><span class="line">  <span class="keyword">if</span> (m_pCurrent != nullptr)</span><br><span class="line">    m_pCurrent-&gt;OnDraw(pCurDC);</span><br><span class="line">  <span class="comment">//拷贝位图到窗口</span></span><br><span class="line">  pDC-&gt;BitBlt(<span class="number">0</span>, <span class="number">0</span>, rc.Width(), rc.Height(), pCurDC, <span class="number">0</span>, <span class="number">0</span>, SRCCOPY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/19/CR-MFC03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -491,342 +832,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/12/CR-SDK04/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/12/CR-SDK04/" class="post-title-link" itemprop="url">CR-SDK04</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-12 09:50:24" itemprop="dateCreated datePublished" datetime="2023-06-12T09:50:24+08:00">2023-06-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:41:58" itemprop="dateModified" datetime="2023-08-31T19:41:58+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>图片素材的导入:  </p>
-<ol>
-<li><img src="/../images/SDK04.png" alt="SDK04"><br>2.导入后，包含resource.h头文件。</li>
-</ol>
-<p>SetBkmode()设置文字背景。<br>GetAsyncKeyState()异步获取键盘最近一次的键值。<br>AdjustWindowRect()调整窗口矩形。</p>
-<p>BitMap使用<br>1.LoadBitmap()，获得Bitmap的句柄。<br>2.BitBlt()，输出Bitmap。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/10/CR-SDK03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/10/CR-SDK03/" class="post-title-link" itemprop="url">CR-SDK03</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-10 11:15:52" itemprop="dateCreated datePublished" datetime="2023-06-10T11:15:52+08:00">2023-06-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-31 19:41:46" itemprop="dateModified" datetime="2023-08-31T19:41:46+08:00">2023-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>热键:<br>1.所有窗口都有效<br>2.热键需要通过函数RegisterHotKey()注册</p>
-<p>窗口组成:<br>1.客户区域<br>2.非客户区域</p>
-<p>WM_PAINT触发条件:存在无效区域</p>
-<p>BeginPaint()的DC带无效区域</p>
-<p>GetDC()只能改客户区</p>
-<p>窗口的句柄与进程无关</p>
-<p>消息类型:<br>WM_TIMER:定时器消息<br>WM_HOTKEY:热键消息<br>WM_KEYDOWN:键盘按下消息<br>WM_KEYUP:键盘弹起消息<br>WM_CHAR:由函数TranslateMessage()将WM_KEYDOWN转化成</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/08/NJU-PA1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/08/NJU-PA1/" class="post-title-link" itemprop="url">NJU-PA1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-06-08 16:06:01 / Modified: 16:06:35" itemprop="dateCreated datePublished" datetime="2023-06-08T16:06:01+08:00">2023-06-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>ccache提高重复编译的速度。</p>
-<p>Linux在~&#x2F;.bashrc中添加环境变量:<br>export PATH&#x3D;”&#x2F;your&#x2F;path:$PATH”<br>保存后执行source ~&#x2F;.bashrc</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/08/NJU-PA0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/08/NJU-PA0/" class="post-title-link" itemprop="url">NJU-PA0</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-06-08 16:04:42 / Modified: 16:05:42" itemprop="dateCreated datePublished" datetime="2023-06-08T16:04:42+08:00">2023-06-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Cd命令是内置于shell中的，所以没有manpage。</p>
-<p>xargs命令可以将标准输入转换为参数，传给第一个参数指定的程序。</p>
-<p>gcc的a.out含义是assembler output。</p>
-<p>tmux使用：<br>Ctrl+b  c 创建一个新的窗口<br>Ctrl+b  &amp; 删除当前窗口</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/08/CR-SDK02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kkano">
-      <meta itemprop="description" content="Record my life">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kkano">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/06/08/CR-SDK02/" class="post-title-link" itemprop="url">CR-SDK02</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-06-08 16:00:32" itemprop="dateCreated datePublished" datetime="2023-06-08T16:00:32+08:00">2023-06-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-12-22 20:21:49" itemprop="dateModified" datetime="2023-12-22T20:21:49+08:00">2023-12-22</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>WinMain参数含义:<br>hInstance:应用程序实例句柄。模块基址，程序在内存中的起始地址。<br>hPrevInstance:父进程的实例句柄<br>lpCmdLine:命令行参数<br>nCmdShow:窗口样式  </p>
-<p>窗口的使用的基本<br>1.注册窗口类<br>声明窗口类WNDCLASS,填入窗口类的属性,再调用RegisterClass()<br>2.创建窗口，获取窗口句柄<br>HWND hWnd&#x3D;CreateWindow()<br>在调用CreateWindow的过程中会调用窗口的过程处理函数，所有窗口过程处理函数需要返回真<br>3.显示窗口<br>ShowWindow()<br>4.实现消息循环<br>5.编写窗口过程函数<br>消息队列与创建窗口的线程绑定。</p>
-<p>窗口过程函数声明<br>LRESULT CALLBACK WindowProc(HWND hwnd,<br>  UINT uMsg,<br>  WPARAM wParam,<br>  LPARAM lParam)</p>
-<p>DefWindowProc()将消息给操作系统处理。</p>
-<p>在VS调试中,@err,hr可以直接查看错误信息。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -892,14 +901,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">127</span>
+          <span class="site-state-item-count">132</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
